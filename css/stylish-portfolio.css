@@ -176,7 +176,10 @@ hr.small {
     }
 
 .title-name {
-    color: #ff2600;
+    /*color: #fff;*/
+  background: -webkit-linear-gradient(white, white, white, white, #ffe900, #ffe900, #ff4300, #ff0000, #ff0000, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .main-number{
@@ -208,15 +211,27 @@ hr.small {
     }
     .main-number{
         font-weight: 900;
-        font-size: 2.3em;
-        color: #fff;
+        font-size: 1.8em;
+        color: #3679af;
+    }
+    .icon {
+        height: 35px;
+        width: 35px;
+        margin-top: -20px;
+    }
+    #tim-icon {
+        height: 20px;
+        width: 60px;
+        margin-top: -20px;
     }
 }
 
 
 
 .delivery {
-    color: #ff2600;
+      background: -webkit-linear-gradient(white, white, white, white, #ffe900, #ffe900, #ff4300, #ff0000, #ff0000, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     font-size: 70px;
     font-weight: 900;
 }
