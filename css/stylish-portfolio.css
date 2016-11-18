@@ -176,8 +176,6 @@ hr.small {
     }
 
 .title-name {
-
-
   background: -webkit-linear-gradient(white, white, white, white, #ffe900, #ffe900, #ff4300, #ff0000, #ff0000, #ff0000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -187,7 +185,7 @@ hr.small {
 .main-number{
     font-weight: 900;
     font-size: 4em;
-    color: #000;
+    color: #007c2b;
 }
 
 .icon {
