@@ -176,13 +176,19 @@ hr.small {
     }
 
 .title-name {
-  background: -webkit-linear-gradient(white, white, white, white, #ffe900, #ffe900, #ff4300, #ff0000, #ff0000, #ff0000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /*text-shadow: 2px 2px ;*/
+
+    text-shadow: 3px 0 0 #d10000, -3px 0 0 #d10000, 0 3px 0 #d10000, 0 -3px 0 #d10000,
+     2px 2px #d10000, -2px -2px 0 #d10000, 2px -2px 0 #d10000, -2px 2px 0 #d10000,
+      7px 0px 0px rgba(255,255,255,255), -7px 7px 0px rgba(255,255,255,255), 0px 7px 0px rgba(255,255,255,255), 0px -7px 0px rgba(255,255,255,255),
+       7px 7px 0px rgba(255,255,255,255), -7px -7px 0px rgba(255,255,255,255), 7px -7px 0px rgba(255,255,255,255), -7px 7px 0px rgba(255,255,255,255);
+    /*text-shadow: 4px 4px 4px red, 9px 8px 9px rgba(255,255,255,255);*/
+    color: #007c2b;
+    font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
+    font-style: italic;
 }
 
 .main-number{
+
     font-weight: 900;
     font-size: 4em;
     color: #007c2b;
@@ -233,10 +239,9 @@ hr.small {
 
 
 .delivery {
-      background: -webkit-linear-gradient(white, white, white, white, #ffe900, #ffe900, #ff4300, #ff0000, #ff0000, #ff0000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-    font-size: 70px;
+    color: #fff;
+    font-family: "Brush Script MT", cursive;
+    font-size: 80px;
     font-weight: 900;
 }
 
@@ -259,7 +264,6 @@ hr.small {
 
 .boder-menu {
     border-bottom: #000000 solid;
-    /*background-color: #B6E8E3;*/
     color: red;
 }
 
