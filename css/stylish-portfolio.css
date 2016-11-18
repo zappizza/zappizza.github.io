@@ -184,10 +184,14 @@ hr.small {
 
 .main-number{
     font-weight: 900;
-    font-size: 5em;
-    color: #fff;
+    font-size: 4em;
+    color: #3679af;
 }
 
+.icon {
+        margin-top: -50px;
+        /*margin-left: -20px;*/
+}
 
 
 @media(max-width:768px) {
@@ -212,8 +216,8 @@ hr.small {
     .main-number{
         font-weight: 900;
         font-size: 1.8em;
-        color: #3679af;
     }
+
     .icon {
         height: 35px;
         width: 35px;
