@@ -177,10 +177,11 @@ hr.small {
 
 .title-name {
     font-size: 10em;
-    text-shadow: 2px 0 0 #d10000, -2px 0 0 #d10000, 0 2px 0 #d10000, 0 -2px 0 #d10000,
-     1px 1px #d10000, -1px -1px 0 #d10000, 1px -1px 0 #d10000, -1px 1px 0 #d10000,
+    text-shadow: 7px 0 0 #fff, -7px 0 0 #fff, 0 0px 0 #fff, 0 -8px 0 #fff,
+     6px 8px #fff, -5px -8px 0 #fff, 8px -8px 0 #fff, -8px 8px 0 #fff/*,
       7px 0px 0px rgba(255,255,255,255), -7px 7px 0px rgba(255,255,255,255), 0px 7px 0px rgba(255,255,255,255), 0px -7px 0px rgba(255,255,255,255),
-       7px 7px 0px rgba(255,255,255,255), -7px -7px 0px rgba(255,255,255,255), 7px -7px 0px rgba(255,255,255,255), -7px 7px 0px rgba(255,255,255,255);
+       7px 7px 0px rgba(255,255,255,255), -7px -7px 0px rgba(255,255,255,255), 7px -7px 0px rgba(255,255,255,255), -7px 7px 0px rgba(255,255,255,255)
+       */;
 
     color: #007c2b;
     font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
