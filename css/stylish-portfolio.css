@@ -216,6 +216,7 @@ hr.small {
     float: right;
     margin-right: 0.3em;
     margin-top: -.3em;
+    padding-bottom: 1em;
     /*border-bottom: red solid;*/
      text-shadow: 2px 0px 0px #fff, -2px 0 0 #fff, 0px 2px 0 #fff, 0px -2px 0 #fff,
      1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
