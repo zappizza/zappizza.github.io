@@ -439,6 +439,9 @@ h6,
   font-size: 1rem;
 }
 
+/* Novo icones */
+
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
@@ -11315,9 +11318,9 @@ form .row:first-child .floating-label-form-group {
     position: absolute;
     margin-top: -5%;
     margin-left: 13%;
-    font-size: .9em;
+    font-size: 0.9em;
   }
-  
+
   .constru {
     font-size: 1.5em;
   }
