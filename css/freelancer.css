@@ -4757,6 +4757,11 @@ input[type='button'].btn-block {
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.constru {
+  font-size: 1rem;
 }
 
 .navbar-brand:hover,
@@ -10734,7 +10739,8 @@ button.bg-dark:focus {
 }
 
 .text-uppercase {
-  text-transform: uppercase !important;
+  /*text-transform: uppercase !important;*/
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .text-capitalize {
@@ -11107,7 +11113,8 @@ a.text-dark:focus {
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
-  #mainNav .navbar-brand {
+
+  #mainNav {
     font-size: 1.75em;
     -webkit-transition: font-size 0.3s;
     transition: font-size 0.3s;
@@ -11140,8 +11147,9 @@ a.text-dark:focus {
 }
 
 .masthead .masthead-heading {
-  font-size: 2.75rem;
-  line-height: 2.75rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-top: -5%;
 }
 
 .masthead .masthead-subheading {
@@ -11295,7 +11303,22 @@ form .row:first-child .floating-label-form-group {
 @media only screen and (max-width: 700px) {
   .masthead-avatar-1 {
     width: 100%;
-    margin-top: -10%;
+    margin-top: -20%;
     padding: 0%;
+  }
+
+  .navbar-brand {
+    font-size: 1.3em;
+  }
+
+  .constru-nav {
+    position: absolute;
+    margin-top: -5%;
+    margin-left: 13%;
+    font-size: .9em;
+  }
+  
+  .constru {
+    font-size: 1.5em;
   }
 }
