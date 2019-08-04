@@ -11147,8 +11147,9 @@ a.text-dark:focus {
 }
 
 .masthead .masthead-heading {
-  font-size: 2.75rem;
-  line-height: 2.75rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-top: -5%;
 }
 
 .masthead .masthead-subheading {
@@ -11302,16 +11303,22 @@ form .row:first-child .floating-label-form-group {
 @media only screen and (max-width: 700px) {
   .masthead-avatar-1 {
     width: 100%;
-    margin-top: -10%;
+    margin-top: -20%;
     padding: 0%;
   }
 
   .navbar-brand {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 
-  .constru {
+  .constru-nav {
     position: absolute;
-    align: center;
+    margin-top: -5%;
+    margin-left: 13%;
+    font-size: .9em;
+  }
+  
+  .constru {
+    font-size: 1.5em;
   }
 }
