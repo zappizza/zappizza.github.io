@@ -531,6 +531,11 @@ mark,
   height: auto;
 }
 
+.img-fluid-projetos {
+  max-width: 100%;
+  height: auto;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
