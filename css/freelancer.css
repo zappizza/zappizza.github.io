@@ -439,8 +439,6 @@ h6,
   font-size: 1rem;
 }
 
-/* Novo icones */
-
 
 .lead {
   font-size: 1.25rem;
@@ -7311,7 +7309,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #1abc9c !important;
+  background-color: #EBEAF4 !important;
 }
 
 a.bg-primary:hover,
@@ -10975,6 +10973,12 @@ a.text-dark:focus {
   }
 }
 
+/* Forma e Reformas */
+.profile-header {
+  width: 50%;
+  height: auto;
+}
+
 .page-section {
   padding: 6rem 0;
 }
@@ -11160,7 +11164,7 @@ a.text-dark:focus {
 }
 
 .masthead-avatar-1 {
-  width: 70%;
+  /*width: 70%;*/
 }
 
 .masthead {
@@ -11306,7 +11310,7 @@ form .row:first-child .floating-label-form-group {
 @media only screen and (max-width: 700px) {
   .masthead-avatar-1 {
     width: 100%;
-    margin-top: -20%;
+    /*margin-top: -20%;*/
     padding: 0%;
   }
 
