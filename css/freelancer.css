@@ -37,10 +37,10 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: 'Lato', -apple-system, BlinkMacSystemFont,
+  --font-family-sans-serif: 'Muli', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  --font-family-monospace: 'Muli', SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 }
 
@@ -73,7 +73,7 @@ section {
 
 body {
   margin: 0;
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 1rem;
@@ -209,7 +209,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+  font-family: 'Muli', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
   font-size: 1em;
 }
@@ -270,7 +270,7 @@ select,
 optgroup,
 textarea {
   margin: 0;
-  font-family: inherit;
+  font-family: 'Muli', inherit;
   font-size: inherit;
   line-height: inherit;
 }
@@ -402,7 +402,7 @@ h6,
 .h5,
 .h6 {
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 700;
@@ -4758,7 +4758,7 @@ input[type='button'].btn-block {
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Muli', Times, serif;
 }
 
 .constru {
@@ -6696,7 +6696,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-style: normal;
@@ -6823,7 +6823,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-style: normal;
@@ -10654,7 +10654,7 @@ button.bg-dark:focus {
 }
 
 .text-monospace {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+  font-family: 'Muli', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace !important;
 }
 
@@ -10742,7 +10742,7 @@ button.bg-dark:focus {
 
 .text-uppercase {
   /*text-transform: uppercase !important;*/
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Muli', Times, serif;
 }
 
 .text-capitalize {
@@ -10980,6 +10980,11 @@ a.text-dark:focus {
   height: auto;
 }
 
+.logo-pequeno {
+  width: 20%;
+  height: auto;  
+}
+
 /* Fim da nova parte Forma e Reformas */
 
 .page-section {
@@ -11080,7 +11085,7 @@ a.text-dark:focus {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 700;
@@ -11112,7 +11117,7 @@ a.text-dark:focus {
 }
 
 #mainNav .navbar-toggler {
-  font-size: 80%;
+  font-size: 100%;
   padding: 0.8rem;
 }
 
@@ -11309,23 +11314,9 @@ form .row:first-child .floating-label-form-group {
     visibility: none;
   }
 
-  .navbar-brand {
-    font-size: 1.3em;
-  }
-
-  .constru-nav {
-    position: absolute;
-    margin-top: -5%;
-    margin-left: 13%;
-    font-size: 0.9em;
-  }
-
-  .constru {
-    font-size: 1.5em;
-  }
-  
-  .descricao {
-
+  .logo-pequeno {
+    width: 40%;
+    height: auto;  
   }
 }
 
@@ -11336,7 +11327,8 @@ form .row:first-child .floating-label-form-group {
     padding-top: 50%;
     visibility: none;
   }
-  .computador {
-    visibility: hidden;
+  .logo-pequeno {
+    width: 35%;
+    height: auto;  
   }
 }
