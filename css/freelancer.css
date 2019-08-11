@@ -11095,7 +11095,7 @@ a.text-dark:focus {
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link {
-  color: #fff;
+  color: #252A2E;
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
@@ -11335,5 +11335,8 @@ form .row:first-child .floating-label-form-group {
     width: 100%;
     padding-top: 50%;
     visibility: none;
+  }
+  .computador {
+    visibility: hidden;
   }
 }
