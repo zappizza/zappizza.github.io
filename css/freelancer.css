@@ -7637,12 +7637,6 @@ button.bg-dark:focus {
     display: inline-flex !important;
   }
 
-/* nova forma e reformas */
-  .masthead-avatar-1 {
-    width: 100%;
-    padding-top: 50%;
-  }
-
 }
 
 @media (min-width: 992px) {
@@ -11332,5 +11326,14 @@ form .row:first-child .floating-label-form-group {
   
   .descricao {
 
+  }
+}
+
+/* iPad forma e reformas */
+@media only screen and (max-width: 768px) {
+  .masthead-avatar-1 {
+    width: 100%;
+    padding-top: 50%;
+    visibility: none;
   }
 }
