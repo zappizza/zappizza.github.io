@@ -7320,7 +7320,7 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #2c3e50 !important;
+  background-color: #ebeaf4 !important;
 }
 
 a.bg-secondary:hover,
@@ -7636,6 +7636,13 @@ button.bg-dark:focus {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
   }
+
+/* nova forma e reformas */
+  .masthead-avatar-1 {
+    width: 100%;
+    padding-top: 50%;
+  }
+
 }
 
 @media (min-width: 992px) {
@@ -10973,11 +10980,13 @@ a.text-dark:focus {
   }
 }
 
-/* Forma e Reformas */
+/* Inicio da nova parte Forma e Reformas */
 .profile-header {
   width: 50%;
   height: auto;
 }
+
+/* Fim da nova parte Forma e Reformas */
 
 .page-section {
   padding: 6rem 0;
@@ -11149,8 +11158,8 @@ a.text-dark:focus {
 }
 
 .masthead {
-  padding-top: calc(6rem + 74px);
-  padding-bottom: 6rem;
+  /*padding-top: calc(6rem + 74px);
+  padding-bottom: 6rem;*/
 }
 
 .masthead .masthead-heading {
@@ -11161,14 +11170,6 @@ a.text-dark:focus {
 
 .masthead .masthead-subheading {
   font-size: 1.25rem;
-}
-
-.masthead-avatar-1 {
-  /*width: 70%;*/
-}
-
-.masthead {
-  /*width: 15rem;*/
 }
 
 @media (min-width: 992px) {
@@ -11310,8 +11311,8 @@ form .row:first-child .floating-label-form-group {
 @media only screen and (max-width: 700px) {
   .masthead-avatar-1 {
     width: 100%;
-    /*margin-top: -20%;*/
-    padding: 0%;
+    padding-top: 50%;
+    visibility: none;
   }
 
   .navbar-brand {
