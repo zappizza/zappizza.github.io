@@ -23,7 +23,6 @@
 
   <!-- Theme CSS -->
   <link href="css/freelancer.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -92,17 +91,20 @@
       </div>
 
       <!-- Portfolio Grid Items -->
-      <div class="row">
+      <div class="row" id="portfolio-grid">
 
         <!-- Portfolio Item 1 -->
         <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/obra.png" alt="obras">
+          <div class="portfolio-item mx-auto" >
+            <!-- <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"> -->
+              <!-- <div class="portfolio-item-caption-content text-center text-white"> -->
+                <!-- <i class="fas fa-plus fa-3x"></i> -->
+              <!-- </div> -->
+            <!-- </div> -->
+            <a href="projects.html" class="removeProject">
+              <img class="img-fluid" src="img/portfolio/obra.png" alt="obras">
+            </a>
+
           </div>
         </div>
 
@@ -773,6 +775,7 @@
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
 
+  <script src="js/application.js"></script>
 </body>
 
 </html>
