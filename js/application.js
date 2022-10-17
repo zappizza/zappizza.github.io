@@ -13,38 +13,32 @@ $(document).ready(function(){
       console.log(items["photos"])
 
 
-
       for (var photo_key in items["photos"]){
         // if (photo_id == items["photos"][photo_key]["id"]) {
         //   console.log(items["photos"][photo_key]["path"])
         //   img.src = items["photos"][photo_key]["path"];
         // };
-        console.log(items["photos"][photo_key]["path"])
 
-        var img = document.createElement('img');
-        img.src = items["photos"][photo_key]["path"];
 
-        img.className = "img-fluid";
-        var projectLink = document.createElement('a');
-        projectLink.setAttribute('href', "projects.html");
-        var text = document.createTextNode(items["categories"][key]["title"]);
-        projectLink.appendChild(text);
-        projectLink.appendChild(img)
-        var portfolio_item = document.createElement('div');
-        portfolio_item.className = "portfolio-item mx-auto";
-        portfolio_item.appendChild(projectLink)
+        var test_item_one = document.createElement('div');
+        test_item_one.className = "col-md-6 col-lg-4";
+        test_item_one.innerHTML = `<a href="projects.html">
+            <div class="portfolio-item mx-auto" >
+              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="${items["photos"][photo_key]["path"]}" alt="obras">
+              <h3 class="first-txt text-uppercase">
+                <strong>${items['categories'][key]['title']}</strong>
+              </h3>
+            </div>
+          </a>`
+        document.getElementById('portfolio-grid').appendChild(test_item_one);
 
-        var item_one = document.createElement('div');
-        item_one.className = "col-md-6 col-lg-4";
-        item_one.appendChild(portfolio_item)
 
-        document.getElementById('portfolio-grid').appendChild(item_one);
       }
-
-
-
-
-
 
 
       // console.log(item_one)
