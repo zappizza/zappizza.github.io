@@ -12,12 +12,17 @@ $(document).ready(function(){
     }
     else if (pageLocation.includes("#")){
       console.log("icludes!!!!")
+      console.log(pageLocation.split("#").pop())
+
     }
   }
+
+
 
   function projects(items) {
     console.log(items["projects"])
     for (var key in items["projects"]){
+      // Needs to with Nen if we will have project section
     }
   };
 
