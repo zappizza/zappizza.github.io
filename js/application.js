@@ -5,18 +5,18 @@ $(document).ready(function(){
 
 
   function myFunction(items) {
-    document.getElementById("home_default").style.display = 'none';
-    document.getElementById("home_carousel").style.display = 'block';
-
+    console.log(items)
     if (pageLocation == "index.html") {
+      document.getElementById("home_default").style.display = 'none';
+      document.getElementById("home_carousel").style.display = 'block';
       categories(items)
-      // projects(items)
+      // photosCategory(items)
       // courselHeader(items)
     }
     else if (pageLocation.includes("#")){
       console.log("icludes!!!!")
-      console.log(pageLocation.split("#").pop())
-
+      category = pageLocation.split("#").pop()
+      photosCategory(items, category)
     }
   }
 
@@ -29,34 +29,40 @@ $(document).ready(function(){
   };
 
 
-  function projects(items) {
-    // console.log(items["projects"])
-    // for (var key in items["projects"]){
-    //   // Needs to with Nen if we will have project section
-    // }
+  function photosCategory(items, category) {
+
+    var photos = []
+    for (var key in items["categories"]){
+      if (items["categories"][key]["title"] == category) {
+        console.log("Category found")
+        photos = items["categories"][key]["photos_ids"]
+      }
+    }
+    console.log(photos)
+    for (photo in items["photos"]) {
+      if (photos.includes(items["photos"][photo]["id"])){
+        console.log(items["photos"][photo])
+        var imageBlock = document.createElement('div');
+        imageBlock.className = "col-md-6 col-lg-4 photo-pad";
+
+        imageBlock.innerHTML = `<div class="portfolio-item mx-auto">
+          <p class="text-center mb-0 lead">${items["photos"][photo]["title"]}</p>
+          <img class="img-fluid-projetos" src="${items["photos"][photo]["path"]}" alt="${items["photos"][photo]["title"]}">
+        </div>`
+
+        document.getElementById("image-section").appendChild(imageBlock);
+      }
+    }
   };
 
   function categories(items) {
     // console.log(items["categories"])
     for (var key in items["categories"]){
       var len = items["categories"][key]["photos_ids"].length
-      console.log(len)
       photo_id = items["categories"][key]["photos_ids"][len - 1]
-
-      // console.log(photo_id)
-      console.log(items["categories"][key]["title"])
-      console.log(items["categories"][key])
-      console.log(`photo ID ${photo_id}` )
-
-      console.log(items["photos"])
-
-
-
-
 
       for (var photo in items["photos"]){
         if (items["photos"][photo]["id"] == photo_id) {
-          console.log("PHOTO ID FOUND")
 
           // Set carousel photos header
           var courselImage = document.createElement('div');
@@ -74,12 +80,12 @@ $(document).ready(function(){
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
                   <strong>
-                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Solar Energy</h4>
-                    <h3 class="display-2 font-secondary text-white mb-4">Innovative Solar Solution For Home</h3>
+                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">${items["categories"][key]["title"]}</h4>
+                    <h3 class="display-2 font-secondary text-white mb-4">${items["photos"][photo]["tag"]}</h3>
                   </strong>
                 </div>
             </div>`
-          document.getElementById("coursel-wrapper").appendChild(courselImage)
+          document.getElementById("coursel-wrapper").appendChild(courselImage);
 
           // Set photos by categories on home page
           var test_item_one = document.createElement('div');
@@ -108,9 +114,7 @@ $(document).ready(function(){
     "method": "GET",
     "timeout": 0,
     crossDomain: true,
-    "headers": {
-      "X-Requested-With": "XMLHttpRequest"
-    },
+
   };
 
   $.ajax(settings).done(function (response) {
