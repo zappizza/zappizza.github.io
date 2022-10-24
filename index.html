@@ -74,7 +74,6 @@
       <!-- Masthead Subheading -->
       <div class="col-lg-12">
         <p class="text-secondary masthead-subheading font-weight-light mb-0">Uma empresa de prestação de serviços</p></br>
-        <p class="text-secondary masthead-subheading font-weight-light mb-0">71 4141-5513</p></br>
         <p class="text-secondary masthead-subheading font-weight-light mb-0">71 99120-2969</p>
         </br>
         <p class="text-secondary">nilson.formaereforma@gmail.com</p>
@@ -104,21 +103,34 @@
       <div class="row" id="portfolio-grid">
 
         <!-- Portfolio Item 1 -->
+
         <div class="col-md-6 col-lg-4">
-          <a href="#projetos">
-            <div class="portfolio-item mx-auto" >
-              <h3 class="first-txt">TEST TEXT</h3>
-              <img class="img-fluid" src="img/portfolio/obra.png" alt="obras">
-              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <h3 class="first-txt">TEST TEXT</h3>
+          <h2 class="text-center">Placa Solar</h2>
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <p>Deixe o sol trabalhar para sua casa com soluções solar inovadora.</p>
               </div>
             </div>
-          </a>
+            <img class="img-fluid" src="img/placa-solar.jpg" alt="placa solar">
+          </div>
         </div>
 
-      </div>
-      <!-- /.row -->
-    </div>
+        <div class="col-md-6 col-lg-4">
+          <h2 class="text-center">Construção</h2>
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <p>Fazemos casa, quartos, salas, cozinhas, banheiros, varanda e muito mais.</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/predio-depois.jpg" alt="contrucao">
+          </div>
+        </div>
+
+
+      </div> <!-- /.row -->
+    </div> <!--  container -->
   </section>
 
 
@@ -139,21 +151,6 @@
         <div class="divider-custom-line"></div>
       </div>
 
-      <h2 class="text-center text-uppercase text-secondary mb-0">Revitalização de Mármore</h2></br>
-      <h4 class="text-center text-uppercase mb-0">Limpeza, impermeabilização e polimento em mármore</h4></br>
-
-      <div class="col-md-6 col-lg-4">
-        <a href="#projetos">
-          <div class="portfolio-item mx-auto" >
-            <h3 class="first-txt">TEST TEXT</h3>
-            <img class="img-fluid" src="img/portfolio/obra.png" alt="obras">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <h3 class="first-txt">TEST TEXT</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-
     </div>
   </section>
 
@@ -168,7 +165,6 @@
 
         <h6 class="text-center mb-0">nilson.formaereforma@gmail.com</h6></br>
         <h6 class="text-center mb-0">www.formaereformas.com</h6></br>
-        <p class="page-section-heading text-center text-secondary mb-0">71 4141-5513</p></br>
         <p class="page-section-heading text-center text-secondary mb-0">71 99120-2969</p>
       </div>
       <!-- Icon Divider -->
@@ -256,9 +252,8 @@
 
         <!-- Footer About Text -->
         <div class="col-lg-4">
-          <h4 class="mb-4">formaereformas.com</h4>
-          <p class="lead mb-0">71 4141-5513</p>
-          <p class="lead mb-0">71 99120-2969</p>
+          <h3 class="mb-4">formaereformas.com</h3>
+          <h3 class="mb-4">71 99120-2969</h3>
           <p class="lead mb-0">nilson.formaereforma@gmail.com</p>
         </div>
 
@@ -294,8 +289,6 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
-  <script src="js/controller.js"></script>
-  <script src="js/application.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -307,6 +300,8 @@
       function myFunction(items) {
         document.getElementById("home_default").style.display = 'none';
         document.getElementById("home_carousel").style.display = 'block';
+        document.getElementById("portfolio-grid").innerHTML = "";
+        // portfolio-grid
         console.log(items)
         homepage(items)
       }
@@ -332,7 +327,6 @@
               projectHash[items["photos"][photo]["project_id"]]["photo"] = items["photos"][photo]
 
               var project = projectHash[items["photos"][photo]["project_id"]]
-              console.log(project)
 
               // Set photos by PROJECT on home page
               var projectTitle = document.createElement('h2');
@@ -347,10 +341,9 @@
               projectDesctiption.appendChild(descriptionValue);
               document.getElementById('project-container').appendChild(projectDesctiption);
 
-
               var test_item_one = document.createElement('div');
-              test_item_one.className = "col-md-6 col-lg-4";
-              test_item_one.setAttribute("id", project["title"]);
+              test_item_one.className = "col-md-6 col-lg-4 center";
+              // test_item_one.setAttribute("id", project["title"]);
               test_item_one.innerHTML = `<a href="projects.html#${items["photos"][photo]["project_id"]}">
                   <div class="portfolio-item mx-auto" >
                     <h3 class="first-txt text-uppercase">${project["title"]}</h3>
@@ -363,12 +356,14 @@
               document.getElementById('project-container').appendChild(test_item_one);
             }
 
+            // SET carousel images
             if (items["photos"][photo]["id"] == photo_id) {
 
               // Set carousel photos header
               var courselImage = document.createElement('div');
               var classesCoursel = ""
-              if (key == 1) {
+
+              if (document.getElementsByClassName("carousel-item").length == 0) {
                 classesCoursel = "carousel-item position-relative active";
               } else {
                 classesCoursel = "carousel-item position-relative";
@@ -386,13 +381,14 @@
                       </strong>
                     </div>
                 </div>`
+
               document.getElementById("coursel-wrapper").appendChild(courselImage);
 
 
               // Set photos by categories on home page
               var test_item_one = document.createElement('div');
               test_item_one.className = "col-md-6 col-lg-4";
-              test_item_one.setAttribute("id", items["categories"][key]["title"]);
+              // test_item_one.setAttribute("id", items["categories"][key]["title"]);
               test_item_one.innerHTML = `<a href="categories.html#${items["categories"][key]["id"]}">
                   <div class="portfolio-item mx-auto" >
                     <h3 class="first-txt text-uppercase">${items['categories'][key]['title']}</h3>
@@ -412,8 +408,8 @@
 
 
       var settings = {
-        // "url": "https://radiant-journey-86877.herokuapp.com/photos",
-        "url": "http://127.0.0.1:3000/photos",
+        "url": "https://radiant-journey-86877.herokuapp.com/photos",
+        // "url": "http://127.0.0.1:3000/photos",
         "method": "GET",
         "timeout": 0,
         crossDomain: true,
