@@ -10,6 +10,7 @@
 
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://formaereformas.com">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
   <meta name="google-site-verification" content="6z0m3hgRTvNJTLF_Ps9o7FCrG8hOJE6E8R4294UbOqY" />
 
   <title>Forma e Reformas Construções e Serviços em Geral</title>
@@ -136,8 +137,7 @@
 
   <!-- Projet Section -->
   <section class="page-section portfolio" id="projetos">
-    <div class="container" id="project-container">
-
+    <div class="container">
       <!-- Projet Section Heading -->
       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Projetos</h2>
 
@@ -149,6 +149,8 @@
           <i class="fas fa-star"></i>
         </div>
         <div class="divider-custom-line"></div>
+      </div>
+      <div class="row" id="project-container">
       </div>
 
     </div>
@@ -238,7 +240,7 @@
         <!-- Footer Social Icons -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <img class="img-fluid rounded mb-5" src="img/logo.jpg" alt="forma e reformas">
-          <h4 class="mb-4">Ao redor da Web</h4>
+          <h3 class="mb-4">Ao redor da Web</h3>
           <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/Forma-e-Reformas-Construção-108025460569724/">
             <i class="fab fa-fw fa-facebook-f"></i>
           </a>
@@ -323,26 +325,15 @@
           photo_id = items["categories"][key]["photos_ids"][len - 1]
 
           for (var photo in items["photos"]){
+
+            // Set photos by PROJECT on home page
             if (!projectHash[items["photos"][photo]["project_id"]]["photo"]) {
               projectHash[items["photos"][photo]["project_id"]]["photo"] = items["photos"][photo]
 
               var project = projectHash[items["photos"][photo]["project_id"]]
 
-              // Set photos by PROJECT on home page
-              var projectTitle = document.createElement('h2');
-              projectTitle.className = "text-center text-uppercase text-secondary mb-0";
-              var textValue = document.createTextNode(`${project["title"]}`);
-              projectTitle.appendChild(textValue);
-              document.getElementById('project-container').appendChild(projectTitle);
-
-              var projectDesctiption = document.createElement('h4');
-              projectDesctiption.className = "text-center text-uppercase mb-0";
-              var descriptionValue = document.createTextNode(`${project["description"]}`);
-              projectDesctiption.appendChild(descriptionValue);
-              document.getElementById('project-container').appendChild(projectDesctiption);
-
               var test_item_one = document.createElement('div');
-              test_item_one.className = "col-md-6 col-lg-4 center";
+              test_item_one.className = "col-md-6 col-lg-4";
               // test_item_one.setAttribute("id", project["title"]);
               test_item_one.innerHTML = `<a href="projects.html#${items["photos"][photo]["project_id"]}">
                   <div class="portfolio-item mx-auto" >
@@ -353,6 +344,14 @@
                     </div>
                   </div>
                 </a>`
+
+              var projectDesctiption = document.createElement('h4');
+              projectDesctiption.className = "text-center mb-0";
+              var descriptionValue = document.createTextNode(`${project["description"]}`);
+              projectDesctiption.appendChild(descriptionValue);
+              test_item_one.prepend(projectDesctiption)
+
+
               document.getElementById('project-container').appendChild(test_item_one);
             }
 
