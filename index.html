@@ -151,6 +151,17 @@
         <div class="divider-custom-line"></div>
       </div>
       <div class="row" id="project-container">
+        <div class="col-md-6 col-lg-4"><h4 class="text-center mb-0">Construção de predio</h4><a href="projects.html#2">
+          <div class="portfolio-item mx-auto">
+            <h3 class="first-txt text-uppercase text-center">Safira</h3>
+            <!-- <img class="img-fluid" src="https://res.cloudinary.com/nuci/image/upload/v1666489208/Safira/Test_3.jpg" alt="obras"> -->
+            <img class="img-fluid" src="https://res.cloudinary.com/nuci/image/upload/v1666591396/Revitalização de Mármore/Mármore após recuperação.jpg
+ " alt="obras">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <h3 class="first-txt text-uppercase text-center">Safira</h3>
+            </div>
+          </div>
+        </a></div>
       </div>
 
     </div>
@@ -405,10 +416,98 @@
 
 
 
+      function add_img(image){
+        // collect image properties:
+        var domain = "https://res.cloudinary.com/nuci/image/upload/" + "v" + image.version
+        var img_url = domain  + "/" + encodeURIComponent(image.public_id) + "." + image.format
+        var description = image["context"]["custom"]["alt"]
+        var title = image["context"]["custom"]["caption"]
+        var project = image.public_id.split("/")[0]
+
+        var img_section = image["context"]["custom"]["local"].replace(" ","").replace(" ","").replace(" ","").split(",")
+        // SET carousel images
+        if (img_section.includes("carrossel")) {
+          console.log("Populating carousel")
+          // Set carousel photos header
+          var courselImage = document.createElement('div');
+          var classesCoursel = "carousel-item position-relative active"
+
+          if (document.getElementsByClassName("carousel-item").length == 0) {
+            classesCoursel = "carousel-item position-relative active";
+          } else {
+            classesCoursel = "carousel-item position-relative";
+          }
+          courselImage.className = classesCoursel;
+          courselImage.style.setProperty('height', '100vh');
+          courselImage.style.setProperty('min-height', '400px');
+
+          courselImage.innerHTML = `<img class="position-absolute w-100 h-100" src="${img_url}" style="object-fit: cover;">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <div class="p-3" style="max-width: 900px;">
+                  <strong>
+                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">${title}</h4>
+                    <h3 class="display-2 font-secondary text-white mb-4">${description}</h3>
+                  </strong>
+                </div>
+            </div>`
+
+          document.getElementById("coursel-wrapper").appendChild(courselImage);
+        } else {
+          console.log("Image not to display on carousel")
+          console.log(image)
+        }
+
+        // Populate project section
+        if (img_section.includes("projeto")){
+
+          var test_item_one = document.createElement('div');
+          test_item_one.className = "col-md-6 col-lg-4";
+          // test_item_one.setAttribute("id", project["title"]);
+          test_item_one.innerHTML = `<a href="projects.html#${encodeURIComponent(project)}">
+              <div class="portfolio-item mx-auto" >
+                <h3 class="first-txt text-uppercase text-center">${title}</h3>
+                <img class="img-fluid" src="${img_url}" alt="obras">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <h3 class="first-txt text-uppercase text-center">${title}</h3>
+                </div>
+              </div>
+            </a>`
+
+          var projectDesctiption = document.createElement('h4');
+          projectDesctiption.className = "text-center mb-0";
+          var descriptionValue = document.createTextNode(`${description}`);
+          projectDesctiption.appendChild(descriptionValue);
+          test_item_one.prepend(projectDesctiption)
+
+          document.getElementById('project-container').appendChild(test_item_one);
+        } else {
+          console.log("Image not to be displayed on projeto")
+          console.log(image)
+        }
+      }
+
+      function populate_homepage(argument) {
+        console.log(argument["resources"])
+        // loop through each resource
+        var images = argument["resources"]
+        for (var i in images){
+          // check if custom field "local" in context
+          if ("context" in images[i]){
+            if ("local" in images[i]["context"]["custom"]){
+              // remove default page header to later add carousel
+              document.getElementById("home_default").style.display = 'none';
+              document.getElementById("home_carousel").style.display = 'block';
+              document.getElementById("portfolio-grid").innerHTML = "";
+              add_img(images[i])
+            }
+          }
+        }
+      }
 
       var settings = {
-        "url": "https://forma-e-reformas.herokuapp.com/photos",
+        // "url": "https://forma-e-reformas.herokuapp.com/photos",
         // "url": "http://127.0.0.1:3000/photos",
+        "url": "https://res.cloudinary.com/nuci/image/list/inicio.json",
         "method": "GET",
         "timeout": 0,
         crossDomain: true,
@@ -416,7 +515,8 @@
 
       $.ajax(settings).done(function (response) {
         // console.log(response);
-        myFunction(response);
+        populate_homepage(response)
+        // myFunction(response);
       });
     });
   </script>
