@@ -110,10 +110,6 @@
     </a>
   </div>
 
-
-
-
-
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -130,47 +126,37 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      console.log("Ready");
-      console.log(decodeURI(window.location.href.split("/").pop()));
-      var pageLocation = decodeURI(window.location.href.split("/").pop());
+      var pageLocation = window.location.href.split("/").pop();
       var category_id = pageLocation.split("#").pop()
-
-      function myFunction(items) {
-        console.log(items)
-        if (pageLocation.includes("#")){
-          console.log("icludes!!!!")
-
-        }
-      }
-
       function photosCategory(category) {
-
-        console.log(category)
-        for (photo in category) {
+        var images = category["resources"]
+        for (var i in images) {
+          var image = images[i]
+          var domain = "https://res.cloudinary.com/nuci/image/upload/" + "v" + image.version
+          var img_url = domain  + "/" + encodeURIComponent(image.public_id) + "." + image.format
+          var description = image["context"]["custom"]["alt"]
+          var title = image["context"]["custom"]["caption"]
+          var project = image.public_id.split("/")[0]
+          var category = image["context"]["custom"]["Categoria"]
           var imageBlock = document.createElement('div');
           imageBlock.className = "col-md-6 col-lg-4 photo-pad";
-
           imageBlock.innerHTML = `<div class="portfolio-item mx-auto">
-            <h4 class="text-center">${category[photo]["title"]}</h4>
-            <p class="text-center mb-0 lead">${category[photo]["tag"]}</p>
-            <img class="img-fluid-projetos" src="${category[photo]["path"]}" alt="${category[photo]["title"]}">
+            <h4 class="text-center">${title}</h4>
+            <p class="text-center mb-0 lead">${description}</p>
+            <img class="img-fluid-projetos" src="${img_url}" alt="${title}">
           </div>`
-
           document.getElementById("image-section").appendChild(imageBlock);
         }
       };
 
-      console.log(category_id)
       var settings = {
-        "url": `https://forma-e-reformas.herokuapp.com/categories/${category_id}`,
-        // "url": `http://127.0.0.1:3000/categories/${category_id}`,
+        "url": `https://res.cloudinary.com/nuci/image/list/${category_id}.json`,
         "method": "GET",
         "timeout": 0,
         crossDomain: true,
       };
 
       $.ajax(settings).done(function (response) {
-        // console.log(response);
         photosCategory(response);
       });
     });
