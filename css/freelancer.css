@@ -11006,9 +11006,9 @@ button.bg-dark:focus {
   font-style: italic !important;
 }
 
-.text-white {
+/*.text-white {
   color: #fff !important;
-}
+}*/
 
 .text-primary {
   color: #1abc9c !important;
@@ -11365,8 +11365,8 @@ a.text-dark:focus {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }

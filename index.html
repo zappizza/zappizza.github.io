@@ -294,6 +294,7 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
+
       function add_img(image){
         // collect image properties:
         var domain = "https://res.cloudinary.com/nuci/image/upload/" + "v" + image.version
@@ -308,6 +309,10 @@
         // SET carousel images
         if (img_section.includes("carrossel")) {
           // Set carousel photos header
+          var quote = description
+          if ("aspas" in image["context"]["custom"]){
+            quote = image["context"]["custom"]["aspas"]
+          }
           var courselImage = document.createElement('div');
           var classesCoursel = ""
 
@@ -324,8 +329,8 @@
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
                   <strong>
-                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">${title}</h4>
-                    <h3 class="display-2 font-secondary text-white mb-4">${description}</h3>
+                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">${category}</h4>
+                    <h3 class="display-2 font-secondary text-white mb-4">${quote}</h3>
                   </strong>
                 </div>
             </div>`
