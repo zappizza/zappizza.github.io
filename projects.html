@@ -53,7 +53,13 @@
 
   <!-- Portfolio Grid Items -->
   <!-- Projet Grid Items -->
-  <div class="row" id="image-section">
+    <section class="page-section-projects">
+    <div class="">
+      <!-- Contact Section Heading -->
+      <h2 id="title-projects" class="page-section-heading-category text-center text-secondary">Projetos</h2><br>
+    </div>
+  </section>
+  <div class="row-projects" id="image-section">
 
 
   </div>
@@ -132,6 +138,7 @@
     $(document).ready(function(){
       var pageLocation = window.location.href.split("/").pop();
       var project_id = pageLocation.split("#").pop()
+      document.getElementById("title-projects").innerHTML = decodeURIComponent(project_id.toUpperCase());
       function photosProject(project) {
         var images = project["resources"]
         for (var i in images) {
