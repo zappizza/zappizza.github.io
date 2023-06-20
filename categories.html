@@ -52,8 +52,19 @@
   </nav>
 
   <!-- Portfolio Grid Items -->
+
   <!-- Projet Grid Items -->
-  <div class="row" id="image-section">
+  <section class="page-section-category">
+    <div class="">
+
+      <!-- Contact Section Heading -->
+      <h2 id="title-category" class="page-section-heading-category text-center text-secondary">Entre em contato</h2><br>
+
+    </div>
+  </section>
+
+
+  <div class="row-category" id="image-section">
 
 
   </div>
@@ -128,6 +139,8 @@
     $(document).ready(function(){
       var pageLocation = window.location.href.split("/").pop();
       var category_id = pageLocation.split("#").pop()
+      document.getElementById("title-category").innerHTML = decodeURIComponent(category_id.toUpperCase());
+
       function photosCategory(category) {
         var images = category["resources"]
         for (var i in images) {
