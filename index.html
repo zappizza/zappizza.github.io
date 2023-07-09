@@ -180,12 +180,8 @@
   </section>
 
 
-  <!-- Trigger/Open The Modal -->
-  <button id="myBtn">Open Modal</button>
   <!-- The Modal -->
   <section id="modal-block"></section>
-
-
 
 
   <!-- Footer -->
@@ -278,6 +274,8 @@
         var title = image["context"]["custom"]["caption"]
         var project = image.public_id.split("/")[0]
         var category = image["context"]["custom"]["Categoria"]
+        var descricao = image["context"]["custom"]["descricao"]
+        console.log(image["context"]["custom"])
 
         var img_section = image["context"]["custom"]["local"].replace(" ","").replace(" ","").replace(" ","").split(",")
 
@@ -339,9 +337,9 @@
 
         // Set photos by categories/services on home page
         if (img_section.includes("categoria")){
-          var test_item_one = document.createElement('div');
-          test_item_one.className = "col-md-6 col-lg-4";
-          test_item_one.innerHTML = `<button id="modal-button-${counter}" class="modal-caller" onclick="displayModal(${counter})">
+          var category_item = document.createElement('div');
+          category_item.className = "col-md-6 col-lg-4";
+          category_item.innerHTML = `<div id="modal-button-${counter}" class="modal-caller" onclick="displayModal(${counter})">
               <div class="portfolio-item mx-auto">
                 <h3 class="first-txt text-uppercase">${category}</h3>
                 <img class="img-fluid" src="${img_url}" alt="obras">
@@ -349,8 +347,8 @@
                   <h3 class="first-txt text-uppercase">${category}</h3>
                 </div>
               </div>
-            </button>`
-          document.getElementById('portfolio-grid').appendChild(test_item_one);
+            </div>`
+          document.getElementById('portfolio-grid').appendChild(category_item);
 
           // MODAL PREPARATION
           var modal_block = document.createElement('div');
@@ -369,7 +367,7 @@
                   <div class="row justify-content-center">
                     <div class="col-lg-8">
                       <!-- Portfolio Modal - Title -->
-                      <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                      <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">${category}</h2>
                       <!-- Icon Divider -->
                       <div class="divider-custom">
                         <div class="divider-custom-line"></div>
@@ -379,15 +377,15 @@
                         <div class="divider-custom-line"></div>
                       </div>
                       <!-- Portfolio Modal - Image -->
-                      <img class="img-fluid rounded mb-5" src="img/portfolio/cabin.png" alt="">
+                      <img class="img-fluid rounded mb-5" src="${img_url}" alt="">
                       <!-- Portfolio Modal - Text -->
-                      <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                      <p class="mb-5">${descricao}</p>
                       <button id="close-modal" onclick="closeModal(${counter})" class="btn btn-primary-close" href="#" data-dismiss="modal">
                         <i class="fas fa-times fa-fw"></i>
                         Fechar janela
                       </button></br></br>
 
-                      <a href="file:///Users/renansouza/all_my_projects/Formas_e_Reformas/zappizza.github.io/categories.html#drywall">
+                      <a href="categories.html#${encodeURIComponent(category)}">
                         <button id="" class="btn btn-primary" data-dismiss="modal">
                           <i class="fas fa-times fa-fw"></i>
                           Fotos deste serviço
