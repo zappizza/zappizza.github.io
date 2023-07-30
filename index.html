@@ -165,24 +165,24 @@ FACEBOOK: https://www.facebook.com/themefisher
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Empresa <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="about.html">Sobre Nos</a></li>
-                            <li><a href="team.html">Nossa Equipe</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            <li><a href="faq.html">Perguntas Frequentes</a></li>
-                            <li><a href="pricing.html">Preços</a></li>
+                            <li><a href="#">Sobre Nos</a></li>
+                            <li><a href="#">Nossa Equipe</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Perguntas Frequentes</a></li>
+                            <li><a href="#">Preços</a></li>
                           </ul>
                       </li>
               
-                      <li class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projetos</a>
+                      <li id="project-nav" class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" data-toggle="dropdown">Projetos</a>
                       </li>
               
                       <li class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Serviços</a>
+                          <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Serviços</a>
                       </li>
 
               
-                      <li class="nav-item"><a class="nav-link" href="contact.html">Contatos</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">Contatos</a></li>
                     </ul>
                 </div>
               </nav>
@@ -191,16 +191,6 @@ FACEBOOK: https://www.facebook.com/themefisher
         </div>
         <!--/ Row end -->
 
-        <div class="nav-search">
-          <span id="search"><i class="fa fa-search"></i></span>
-        </div><!-- Search end -->
-
-        <div class="search-block" style="display: none;">
-          <label for="search-field" class="w-100 mb-0">
-            <input type="text" class="form-control" id="search-field" placeholder="Type what you want and enter">
-          </label>
-          <span class="search-close">&times;</span>
-        </div><!-- Site search end -->
     </div>
     <!--/ Container end -->
 
@@ -218,8 +208,8 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <h2 class="slide-title" data-animation-in="slideInLeft">10 Anos de excelência em</h2>
                 <h3 class="slide-sub-title" data-animation-in="slideInRight">Construções e Serviços</h3>
                 <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                    <a href="services.html" class="slider btn btn-primary">Nossos Serviços</a>
-                    <a href="contact.html" class="slider btn btn-primary border">Entre em Contato</a>
+                    <a href="#" class="slider btn btn-primary">Nossos Serviços</a>
+                    <a href="#" class="slider btn btn-primary border">Entre em Contato</a>
                 </p>
               </div>
           </div>
@@ -236,7 +226,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <h3 class="slide-title" data-animation-in="fadeIn">Quando o Serviço é Importante</h3>
                 <h3 class="slide-sub-title" data-animation-in="slideInLeft">Sua Escolha é Simples</h3>
                 <p data-animation-in="slideInRight">
-                    <a href="services.html" class="slider btn btn-primary border">Nossos Serviços</a>
+                    <a href="#" class="slider btn btn-primary border">Nossos Serviços</a>
                 </p>
               </div>
           </div>
@@ -253,8 +243,8 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <h3 class="slide-sub-title" data-animation-in="fadeIn">Acreditamos em Serviços de Qualidade</h3>
                 <p class="slider-description lead" data-animation-in="slideInRight">Lidaremos com o seu fracasso que determina como você alcança o sucesso.</p>
                 <div data-animation-in="slideInLeft">
-                    <a href="contact.html" class="slider btn btn-primary" aria-label="contact-with-us">Faça um Orçamento</a>
-                    <a href="about.html" class="slider btn btn-primary border" aria-label="learn-more-about-us">Saiba Mais</a>
+                    <a href="#" class="slider btn btn-primary" aria-label="contact-with-us">Faça um Orçamento</a>
+                    <a href="#" class="slider btn btn-primary border" aria-label="learn-more-about-us">Saiba Mais</a>
                 </div>
               </div>
           </div>
@@ -542,11 +532,11 @@ FACEBOOK: https://www.facebook.com/themefisher
         </div><!-- shuffle end -->
       </div>
 
-      <div class="col-12">
+      <!-- <div class="col-12">
         <div class="general-btn text-center">
           <a class="btn btn-primary" href="projects.html">Ver Todos os Projetos</a>
         </div>
-      </div>
+      </div> -->
 
     </div><!-- Content row end -->
   </div>
@@ -565,18 +555,19 @@ FACEBOOK: https://www.facebook.com/themefisher
 
         <div class="col-lg-8">
           <div class="ts-newsletter row align-items-center">
-              <div class="col-md-5 newsletter-introtext">
-                <h4 class="text-white mb-0">Inscrição Boletim de Notícias</h4>
-                <p class="text-white">Últimas atualizações e notícias</p>
+              <div class="col-md-6 newsletter-introtext">
+                <h4 class="text-white mb-0">Envie-nos um e-mail e responderemos o mais breve possível</h4>
+
               </div>
 
-              <div class="col-md-7 newsletter-form">
-                <form action="#" method="post">
+              <div class="col-md-5">
+                <a href="mailto:nilson.formaereforma@gmail.com"><p class="text-white">nilson.formaereforma@gmail.com</p></a>
+                <!-- <form action="#" method="post">
                     <div class="form-group">
                       <label for="newsletter-email" class="content-hidden">Email Boletim de Notícias</label>
                       <input type="email" name="email" id="newsletter-email" class="form-control form-control-lg" placeholder="Your your email and hit enter" autocomplete="off">
                     </div>
-                </form>
+                </form> -->
               </div>
           </div><!-- Newsletter end -->
         </div><!-- Col end -->
@@ -610,22 +601,22 @@ FACEBOOK: https://www.facebook.com/themefisher
           <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
             <h3 class="widget-title">Horas de Funcionamento</h3>
             <div class="working-hours">
-              Trabalhamos 7 dias por semana, todos os dias, exceto feriados importantes. Contacte-nos se tiver uma emergência, com a nossa <br>
+              Trabalhamos 5 dias por semana, de Segunda a Sexta, exceto feriados. Contacte-nos se tiver uma emergência, com a nossa <br>
               Linha Direta e Formulário de Contato.
-              <br><br> Segunda - Sexta: <span class="text-right">10:00 - 16:00 </span>
-              <br> Sabado: <span class="text-right">12:00 - 15:00</span>
-              <br> Domingos e Feriados: <span class="text-right">09:00 - 12:00</span>
+              <br><br> Segunda - Sexta: <span class="text-right">8:00 - 18:00 </span>
+              <br> Sabado: <span class="text-right">Fechado</span>
+              <br> Domingos e Feriados: <span class="text-right">Fechado</span>
             </div>
           </div><!-- Col end -->
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
             <h3 class="widget-title">Serviços</h3>
             <ul class="list-arrow">
-              <li><a href="service-single.html">Pré Construção</a></li>
-              <li><a href="service-single.html">Contratação em Geral</a></li>
-              <li><a href="service-single.html">Gerenciamento de Construção</a></li>
-              <li><a href="service-single.html">Projetar e Construir</a></li>
-              <li><a href="service-single.html">Autoconstrução</a></li>
+              <li><a href="#">Pré Construção</a></li>
+              <li><a href="#">Contratação em Geral</a></li>
+              <li><a href="#">Gerenciamento de Construção</a></li>
+              <li><a href="#">Projetar e Construir</a></li>
+              <li><a href="#">Autoconstrução</a></li>
             </ul>
           </div><!-- Col end -->
         </div><!-- Row end -->
@@ -639,7 +630,7 @@ FACEBOOK: https://www.facebook.com/themefisher
             <div class="copyright-info">
               <span>Copyright &copy; <script>
                   document.write(new Date().getFullYear())
-                </script>, Designed &amp; Developed by <a href="https://themefisher.com">Themefisher</a></span>
+                </script>, Designed &amp; Developed by <a href="#">Themefisher</a></span>
             </div>
           </div>
 
@@ -742,7 +733,7 @@ FACEBOOK: https://www.facebook.com/themefisher
           project_item.setAttribute('data-groups', shuffle_selector)
           project_item.innerHTML = `
             <div class="project-img-container">
-              <a class="gallery-popup" href="images/projects/project1.jpg" aria-label="project-img">
+              <a class="gallery-popup" href="${img_url}" aria-label="project-img">
                 <img class="img-fluid" src="${img_url}" alt="project-img">
                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
               </a>
@@ -813,6 +804,7 @@ FACEBOOK: https://www.facebook.com/themefisher
         populate_homepage(response)
       });
     });
+
   </script>
 
 
@@ -828,7 +820,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 
   <!-- Google Map API Key-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script> -->
   <!-- Google Map Plugin-->
   <script src="plugins/google-map/map.js" defer></script>
 
