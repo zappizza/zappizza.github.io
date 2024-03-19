@@ -112,10 +112,10 @@ FACEBOOK: https://www.facebook.com/themefisher
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <div id="navbar-collapse" class="collapse navbar-collapse">
+                <div id="navbar-collapse" onclick="collapseNavbar('navbar-collapse')" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav mr-auto">
                       <li class="nav-item dropdown active">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Início</a>
+                          <a href="#" class="nav-link dropdown-toggle">Início</a>
                       </li>
 
                       <li class="nav-item dropdown">
@@ -123,11 +123,11 @@ FACEBOOK: https://www.facebook.com/themefisher
                       </li>
               
                       <li id="project-nav" class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" data-toggle="dropdown">Projetos</a>
+                          <a href="#project-area" class="nav-link dropdown-toggle">Projetos</a>
                       </li>
               
                       <li class="nav-item dropdown">
-                          <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Serviços</a>
+                          <a href="#ts-service-area" class="nav-link dropdown-toggle">Serviços</a>
                       </li>
                     </ul>
                 </div>
@@ -154,7 +154,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <h2 class="slide-title" data-animation-in="slideInLeft">10 Anos de excelência em</h2>
                 <h3 class="slide-sub-title" data-animation-in="slideInRight">Construções e Reformas</h3>
                 <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                    <a href="services.html" class="slider btn btn-primary">Nossos Serviços</a>
+                    <a href="#ts-service-area" class="slider btn btn-primary">Nossos Serviços</a>
                     <a href="contact.html" class="slider btn btn-primary border">Entre em Contato</a>
                 </p>
               </div>
@@ -172,7 +172,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <h3 class="slide-title" data-animation-in="fadeIn">Quando o Serviço é Importante</h3>
                 <h3 class="slide-sub-title" data-animation-in="slideInLeft">Sua Escolha é Simples</h3>
                 <p data-animation-in="slideInRight">
-                    <a href="services.html" class="slider btn btn-primary border">Nossos Serviços</a>
+                    <a href="#ts-service-area" class="slider btn btn-primary border">Nossos Serviços</a>
                 </p>
               </div>
           </div>
@@ -264,7 +264,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                       <i class="fas fa-users"></i>
                     </span>
                     <div class="ts-service-box-content">
-                      <h3 class="service-box-title">Uma Equipe de Profissionais</h3>
+                      <h3 class="service-box-title">Uma Equipe Versátil de Profissionais</h3>
                     </div>
                 </div><!-- Service 2 end -->
               </div><!-- col end -->
@@ -279,14 +279,14 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <div class="card-header p-0 bg-transparent" id="headingOne">
                     <h2 class="mb-0">
                       <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          Segurança
+                        Atendimento ao Cliente
                       </button>
                     </h2>
                 </div>
               
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#our-values-accordion">
                     <div class="card-body">
-                      Promover serviços de construção e reforma de forma segura e duradoura. Tornando sua case ou trabalho um lugar seguro e confortável!
+                      Nossos objetivos é a satifação do cliente.
                     </div>
                 </div>
               </div>
@@ -294,13 +294,13 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <div class="card-header p-0 bg-transparent" id="headingTwo">
                     <h2 class="mb-0">
                       <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Atendimento ao Cliente
+                        Segurança
                       </button>
                     </h2>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
                     <div class="card-body">
-                      Nossos objetivos é a satifação do cliente.
+                      Promover serviços de construção e reforma de forma segura e duradoura. Tornando sua case ou trabalho um lugar seguro e confortável!
                     </div>
                 </div>
               </div>
@@ -312,11 +312,11 @@ FACEBOOK: https://www.facebook.com/themefisher
                       </button>
                     </h2>
                 </div>
-              <!--   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
                     <div class="card-body">
-                      Para prestar um serviço real, deve acrescentar algo que não pode ser comprado ou medido com dinheiro: sinceridade e integridade.
+                      O sucesso vem com um alto grau de comprometimento.
                     </div>
-                </div> -->
+                </div>
               </div>
           </div>
           <!--/ Accordion end -->
@@ -363,7 +363,7 @@ FACEBOOK: https://www.facebook.com/themefisher
     <div class="row text-center">
         <div class="col-12">
           <h2 class="section-title">Somos Especialistas em</h2>
-          <h3 class="section-sub-title">Que Fazemos</h3>
+          <h3 class="section-sub-title">O Que Nós Fazemos</h3>
         </div>
     </div>
     <!--/ Title row end -->
@@ -422,7 +422,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                 <img loading="lazy" src="images/icon-image/service-icon5.png" alt="service-icon">
               </div>
               <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Renovação</a></h3>
+                <h3 class="service-box-title"><a href="#">Renovação e Reforma</a></h3>
                 <!-- <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p> -->
               </div>
           </div><!-- Service 5 end -->
@@ -494,7 +494,7 @@ FACEBOOK: https://www.facebook.com/themefisher
         <div class="col-lg-8">
           <div class="ts-newsletter row align-items-center">
               <div class="col-md-6 newsletter-introtext">
-                <h4 class="text-white mb-0">Envie-nos um e-mail e responderemos o mais breve possível</h4>
+                <h4 class="text-white mb-0">Envie um e-mail e responderemos o mais breve possível</h4>
 
               </div>
 
@@ -712,6 +712,13 @@ FACEBOOK: https://www.facebook.com/themefisher
         populate_homepage(response)
       });
     });
+
+    // colapse nav-bar after clicking on option
+    function collapseNavbar(elementId){
+      var navBar = document.getElementById(elementId)
+      navBar.classList.remove("show")
+    }
+
 
   </script>
 
