@@ -112,21 +112,21 @@ FACEBOOK: https://www.facebook.com/themefisher
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <div id="navbar-collapse" onclick="collapseNavbar('navbar-collapse')" class="collapse navbar-collapse">
+                <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav mr-auto">
-                      <li class="nav-item dropdown active">
+                      <li id="inicio-nav" onclick="collapseNavbar('inicio-nav')" class="nav-item dropdown active">
                           <a href="#" class="nav-link dropdown-toggle">Início</a>
                       </li>
 
-                      <li class="nav-item dropdown">
-                          <a class="nav-link">Empresa</a> <!-- href="about.html" -->
+                      <li id="contatos-nav" onclick="collapseNavbar('contatos-nav')" class="nav-item dropdown">
+                          <a href="about.html" class="nav-link">Contatos</a>
                       </li>
               
-                      <li id="project-nav" class="nav-item dropdown">
+                      <li id="project-nav" onclick="collapseNavbar('project-nav')" class="nav-item dropdown">
                           <a href="#project-area" class="nav-link dropdown-toggle">Projetos</a>
                       </li>
               
-                      <li class="nav-item dropdown">
+                      <li id="servicos-nav" onclick="collapseNavbar('servicos-nav')" class="nav-item dropdown">
                           <a href="#ts-service-area" class="nav-link dropdown-toggle">Serviços</a>
                       </li>
                     </ul>
@@ -713,10 +713,20 @@ FACEBOOK: https://www.facebook.com/themefisher
       });
     });
 
-    // colapse nav-bar after clicking on option
+    // colapse nav-bar after clicking on option and highlight
     function collapseNavbar(elementId){
       var navBar = document.getElementById(elementId)
-      navBar.classList.remove("show")
+      ulParent = navBar.parentElement  // Get parent node
+      var childs = ulParent.childNodes  // Get all child in from the parent node
+      // Loop over each child to find and remove the active class
+      for (i in childs) {
+        if (childs[i].className != undefined && childs[i].className.includes("active")){
+          childs[i].classList.remove("active")
+        }
+      }
+      navBar.classList.add("active")
+      var divParent = navBar.parentElement.parentElement
+      divParent.classList.remove("show")
     }
 
 
