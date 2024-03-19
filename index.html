@@ -112,7 +112,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <div id="navbar-collapse" class="collapse navbar-collapse">
+                <div id="navbar-collapse" onclick="collapseNavbar('navbar-collapse')" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav mr-auto">
                       <li class="nav-item dropdown active">
                           <a href="#" class="nav-link dropdown-toggle">Início</a>
@@ -712,6 +712,13 @@ FACEBOOK: https://www.facebook.com/themefisher
         populate_homepage(response)
       });
     });
+
+    // colapse nav-bar after clicking on option
+    function collapseNavbar(elementId){
+      var navBar = document.getElementById(elementId)
+      navBar.classList.remove("show")
+    }
+
 
   </script>
 
