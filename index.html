@@ -566,23 +566,34 @@ FACEBOOK: https://www.facebook.com/themefisher
   <script type="text/javascript">
     // INDEX PAGE PROJECT SECTION
     function selectProject(argument) {
-
+      var active_element = document.getElementsByClassName("active")
+      // remove highlight class from project not active)
+      for (var i = 0; i < active_element.length; i++){
+        if (active_element[i].parentElement.className == "shuffle-btn-group"){
+          active_element[i].classList.remove("active")
+        }
+      }
       projects = document.querySelectorAll(".shuffle-item")
 
       // SHOW ALL PROJECTS
       if (typeof(argument) == "string" && argument == "showAl"){
+        var show_all = document.getElementById("all").parentElement
+        show_all.classList.add("active") // Highlight the selected element
         for (var i = 0; i < projects.length; i++) {
           projects[i].style.display = "block";
         }
       }
       else { // SHOW ONLY SELECTED PROJECT
-        selectedProject = argument.getAttribute("value")
+        var selectedProject = argument.getAttribute("value")
+        var prj_element = document.getElementById(selectedProject).parentElement
+        prj_element.classList.add("active") // Highlight the selected element
         for (var i = 0; i < projects.length; i++) {
           projects[i].style.display = "none";
           if (projects[i].getAttribute("data-groups") == selectedProject) {
             projects[i].style.display = "block";
           }
         }
+
       }
 
 
