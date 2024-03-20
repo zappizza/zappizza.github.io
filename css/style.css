@@ -2532,6 +2532,8 @@ img.testimonial-thumb {
   text-transform: uppercase;
   font-size: 58px;
   font-weight: 900;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 5px 20px;
 }
 @media (max-width: 767px) {
   .banner-title {

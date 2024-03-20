@@ -1,24 +1,3 @@
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
-<!-- 
-THEME: Constra - Construction Html5 Template
-VERSION: 1.0.0
-AUTHOR: Themefisher
-
-HOMEPAGE: https://themefisher.com/products/constra-construction-template/
-DEMO: https://demo.themefisher.com/constra/
-GITHUB: https://github.com/themefisher/Constra-Bootstrap-Construction-Template
-
-WEBSITE: https://themefisher.com
-TWITTER: https://twitter.com/themefisher
-FACEBOOK: https://www.facebook.com/themefisher
--->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -31,14 +10,18 @@ FACEBOOK: https://www.facebook.com/themefisher
   <!-- Mobile Specific Metas
 ================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Construction Html5 Template">
+  <meta name="description" content="Contrução, pintura, hidráulica, elétrica, reforço da estrutura, revitalização, polimento, placas solar, manutenção, limpeza, 
+  instalação, entulho, carreto, concerto, impermeabilização, pscina, praça, area, casa, predio, apartamento, quarto, sala, cozinha, banheiro,
+  varanda, quintal, escadas, muro, piso, chão, parede, reboco, manta asfaltica, energia, encanação, tubulação, esgoto, caixa d'água, caixa de esgoto,
+  remoção, drywall, remodelação, remodelações, design interior, design exterior, laje, teto, telha, telhado, cobertura, fixação, porta, portão,
+  janela, ferragen, viga, corrente, contenção, suite, sulejo, box, pia, lavanderia, sanitário, rejunte, bica, calha, e Serviços em Gereal Salvador Bahia">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name=author content="Themefisher">
-  <meta name=generator content="Themefisher Constra HTML Template v1.0">
+  <meta name=author content="Forma e Reformas Salvador Bahia">
+  <meta name=generator content="Forma e Reformas Salvador Bahia">
 
   <!-- Favicon
 ================================================== -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/profile.png">
 
     <!-- CSS
 ================================================== -->
@@ -73,7 +56,7 @@ FACEBOOK: https://www.facebook.com/themefisher
           <div class="row align-items-center">
             <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                 <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/logo-pequeno.png" alt="Constra">
+                  <img loading="lazy" src="images/logo-pequeno.png" alt="formaereforma">
                 </a>
             </div><!-- logo end -->
   
@@ -112,21 +95,21 @@ FACEBOOK: https://www.facebook.com/themefisher
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <div id="navbar-collapse" onclick="collapseNavbar('navbar-collapse')" class="collapse navbar-collapse">
+                <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav mr-auto">
-                      <li class="nav-item dropdown active">
+                      <li id="inicio-nav" onclick="collapseNavbar('inicio-nav')" class="nav-item dropdown active">
                           <a href="#" class="nav-link dropdown-toggle">Início</a>
                       </li>
 
-                      <li class="nav-item dropdown">
-                          <a class="nav-link">Empresa</a> <!-- href="about.html" -->
+                      <li id="contatos-nav" onclick="collapseNavbar('contatos-nav')" class="nav-item dropdown">
+                          <a href="about.html" class="nav-link">Contatos</a>
                       </li>
               
-                      <li id="project-nav" class="nav-item dropdown">
+                      <li id="project-nav" onclick="collapseNavbar('project-nav')" class="nav-item dropdown">
                           <a href="#project-area" class="nav-link dropdown-toggle">Projetos</a>
                       </li>
               
-                      <li class="nav-item dropdown">
+                      <li id="servicos-nav" onclick="collapseNavbar('servicos-nav')" class="nav-item dropdown">
                           <a href="#ts-service-area" class="nav-link dropdown-toggle">Serviços</a>
                       </li>
                     </ul>
@@ -713,10 +696,20 @@ FACEBOOK: https://www.facebook.com/themefisher
       });
     });
 
-    // colapse nav-bar after clicking on option
+    // colapse nav-bar after clicking on option and highlight
     function collapseNavbar(elementId){
       var navBar = document.getElementById(elementId)
-      navBar.classList.remove("show")
+      ulParent = navBar.parentElement  // Get parent node
+      var childs = ulParent.childNodes  // Get all child in from the parent node
+      // Loop over each child to find and remove the active class
+      for (i in childs) {
+        if (childs[i].className != undefined && childs[i].className.includes("active")){
+          childs[i].classList.remove("active")
+        }
+      }
+      navBar.classList.add("active")
+      var divParent = navBar.parentElement.parentElement
+      divParent.classList.remove("show")
     }
 
 
@@ -737,7 +730,7 @@ FACEBOOK: https://www.facebook.com/themefisher
   <!-- Google Map API Key-->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script> -->
   <!-- Google Map Plugin-->
-  <script src="plugins/google-map/map.js" defer></script>
+  <!-- <script src="plugins/google-map/map.js" defer></script> -->
 
 
 
