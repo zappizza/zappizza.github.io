@@ -180,7 +180,8 @@
               </span>
               <div class="ts-service-box-content">
                 <h4>Email</h4>
-                <p>nilson.formaereforma@gmail.com</p>
+                <p id="comp-email" >nilson.formaereforma@gmail.com</p>
+                <button onclick="copyText('comp-email')">Copiar email</button>
               </div>
             </div>
           </div><!-- Col 2 end -->
@@ -192,7 +193,8 @@
               </span>
               <div class="ts-service-box-content">
                 <h4>WhatsApp</h4>
-                <p>(+55) 71 99120-2969</p>
+                <p id="comp-whatsapp">(+55) 71 99120-2969</p>
+                <button onclick="copyText('comp-whatsapp')">Copiar numero</button>
               </div>
             </div>
           </div><!-- Col 3 end -->
@@ -254,6 +256,14 @@
         var divParent = navBar.parentElement.parentElement
         divParent.classList.remove("show")
       }
+
+      function copyText(argument){
+        var copytext = document.getElementById(argument)
+        console.log(copytext.textContent)
+        var text = copytext.textContent
+        navigator.clipboard.writeText(text);
+        alert(text + " foi copiado!");
+      }
     </script>
 
 
@@ -271,12 +281,6 @@
     <script src="plugins/colorbox/jquery.colorbox.js"></script>
     <!-- shuffle -->
     <script src="plugins/shuffle/shuffle.min.js" defer></script>
-
-
-    <!-- Google Map API Key-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
-    <!-- Google Map Plugin-->
-    <script src="plugins/google-map/map.js" defer></script>
 
     <!-- Template custom -->
     <script src="js/script.js"></script>
