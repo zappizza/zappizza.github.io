@@ -102,7 +102,7 @@
                 </li>
 
                 <li id="contatos-nav" onclick="collapseNavbar('contatos-nav')" class="nav-item dropdown">
-                  <a href="about.html" class="nav-link">Contatos</a>
+                  <a href="#main-container" class="nav-link">Contatos</a>
                 </li>
         
                 <li id="project-nav" onclick="collapseNavbar('project-nav')" class="nav-item dropdown">
@@ -457,32 +457,94 @@
   <!--/ Container end -->
 </section><!-- Project area end -->
 
-<section class="subscribe no-padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="subscribe-call-to-acton">
-            <h3>Podemos Ajudar?</h3>
-            <h4>(+55) 71 99120-2969</h4>
+  <section id="main-container" class="main-container">
+    <div class="container">
+
+      <div class="row text-center">
+        <div class="col-12">
+          <h2 class="section-title">Entre em contato através dos nosso </h2>
+          <h3 class="section-sub-title">Meios de Comunicação</h3>
         </div>
-      </div><!-- Col end -->
+      </div>
+      <!--/ Title row end -->
 
-      <div class="col-lg-8">
-        <div class="ts-newsletter row align-items-center">
-            <div class="col-md-6 newsletter-introtext">
-              <h4 class="text-white mb-0">Envie um e-mail e responderemos o mais breve possível</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="ts-service-box-bg text-center h-100">
+            <span class="ts-service-icon icon-round">
+              <i class="fas fa-map-marker-alt mr-0"></i>
+            </span>
+            <div class="ts-service-box-content">
+              <h4>Rede Sociais</h4>
+              <p>
+                <a href="https://www.facebook.com/forma.reforma.7" aria-label="Facebook"><i
+                  class="fab fa-facebook-f"></i> Facebook</a>
+                </br>
+                </br>
+                <a href="https://www.instagram.com/formaereforma__/" aria-label="Instagram"><i
+                  class="fab fa-instagram"></i> Instagram</a>
+              </p>
+              
             </div>
+          </div>
+        </div><!-- Col 1 end -->
 
-            <div class="col-md-5">
-              <a href="mailto:nilson.formaereforma@gmail.com"><p class="text-white">nilson.formaereforma@gmail.com</p></a>
+        <div class="col-md-4">
+          <div class="ts-service-box-bg text-center h-100">
+            <span class="ts-service-icon icon-round">
+              <i class="fa fa-envelope mr-0"></i>
+            </span>
+            <div class="ts-service-box-content">
+              <h4>Email</h4>
+              <p id="comp-email" >nilson.formaereforma@gmail.com</p>
+              <button onclick="copyText('comp-email')">Copiar email</button>
             </div>
-        </div><!-- Newsletter end -->
-      </div><!-- Col end -->
-    </div><!-- Content row end -->
-  </div>
-  <!--/ Container end -->
-</section>
-<!--/ subscribe end -->
+          </div>
+        </div><!-- Col 2 end -->
+
+        <div class="col-md-4">
+          <div class="ts-service-box-bg text-center h-100">
+            <span class="ts-service-icon icon-round">
+              <i class="fa fa-whatsapp-square mr-0"></i>
+            </span>
+            <div class="ts-service-box-content">
+              <h4>WhatsApp</h4>
+              <p id="comp-whatsapp">(+55) 71 99120-2969</p>
+              <button onclick="copyText('comp-whatsapp')">Copiar numero</button>
+            </div>
+          </div>
+        </div><!-- Col 3 end -->
+
+      </div><!-- 1st row end -->        
+    </div><!-- Conatiner end -->
+  </section><!-- Main container end -->
+
+  <section class="subscribe no-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="subscribe-call-to-acton">
+              <h3>Podemos Ajudar?</h3>
+              <h4>(+55) 71 99120-2969</h4>
+          </div>
+        </div><!-- Col end -->
+  
+        <div class="col-lg-8">
+          <div class="ts-newsletter row align-items-center">
+              <div class="col-md-6 newsletter-introtext">
+                <h4 class="text-white mb-0">Envie um e-mail e responderemos o mais breve possível</h4>
+              </div>
+  
+              <div class="col-md-5">
+                <a href="mailto:nilson.formaereforma@gmail.com"><p class="text-white">nilson.formaereforma@gmail.com</p></a>
+              </div>
+          </div><!-- Newsletter end -->
+        </div><!-- Col end -->
+      </div><!-- Content row end -->
+    </div>
+    <!--/ Container end -->
+  </section>
+  <!--/ subscribe end -->
 
 
   <footer id="footer" class="footer bg-overlay">
