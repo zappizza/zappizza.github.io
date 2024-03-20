@@ -822,7 +822,15 @@ ul.top-info-box li .info-box .info-box-subtitle {
   line-height: normal;
   font-size: 15px;
   font-weight: 700;
-  color: #111;
+  color: #fff;
+}
+
+ul.top-info-box li .info-box .info-box-subtitle-mails {
+  margin: 0;
+  line-height: normal;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
 }
 
 /*-- Search start --*/
@@ -1231,6 +1239,12 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   .banner-carousel .banner-carousel-item {
     height: 450px;
   }
+}
+
+.button-look {
+  background: #63CD60;
+  padding: 0 15px;
+  border-radius: 10%;
 }
 
 .slider-content {
