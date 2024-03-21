@@ -715,14 +715,14 @@
           project_item.setAttribute('data-groups', shuffle_selector)
           project_item.innerHTML = `
             <div class="project-img-container">
-              <a class="gallery-popup" href="${img_url}" aria-label="project-img">
-                <img class="img-fluid" src="${img_url}" alt="project-img">
+              <a class="gallery-popup" href="${img_url}" aria-label="${title}">
+                <img class="img-fluid" src="${img_url}" alt="${title}">
                 <span class="gallery-icon"><i class="fa fa-plus"></i></span>
               </a>
               <div class="project-item-info">
                 <div class="project-item-info-content">
                   <h3 class="project-item-title">
-                    <a href="projects-single.html#">${project}</a>
+                    <a href="projects-single.html#">${project} aria-label="${title}</a>
                   </h3>
                   <p class="project-cat">${category}</p>
                 </div>
