@@ -7,10 +7,10 @@
   <meta charset="utf-8">
 
   <meta name="robots" content="index,follow">
-  <link rel="alternate" hreflang="pt-BR" href="https://formaereformas.com" />
+  <link rel="alternate" hreflang="pt-BR" href="https://formaereformas.com">
 
   <link rel="canonical" href="https://formaereformas.com">
-  <meta name="google-site-verification" content="6z0m3hgRTvNJTLF_Ps9o7FCrG8hOJE6E8R4294UbOqY" />
+  <meta name="google-site-verification" content="6z0m3hgRTvNJTLF_Ps9o7FCrG8hOJE6E8R4294UbOqY">
   <meta name="description" content="Contrução, pintura, hidráulica, elétrica, reforço da estrutura, revitalização, polimento, placas solar, manutenção, limpeza, 
   instalação, entulho, carreto, concerto, impermeabilização, pscina, praça, area, casa, predio, apartamento, quarto, sala, cozinha, banheiro,
   varanda, quintal, escadas, muro, piso, chão, parede, reboco, manta asfaltica, energia, encanação, tubulação, esgoto, caixa d'água, caixa de esgoto,
@@ -174,7 +174,7 @@
             <h3 class="slide-sub-title" data-animation-in="slideInRight">Construções e Reformas</h3>
             <p data-animation-in="slideInLeft" data-duration-in="1.2">
               <a href="#about" class="slider btn btn-primary">Nossos Serviços</a>
-              <a href="about.html" class="slider btn btn-primary border">Entre em Contato</a>
+              <a href="#contacts" class="slider btn btn-primary border">Entre em Contato</a>
             </p>
           </div>
         </div>
@@ -476,16 +476,16 @@
         <div class="col-md-4">
           <div class="ts-service-box-bg text-center h-100">
             <span class="ts-service-icon icon-round">
-              <img src="images/icon-image/fact4.png">
+              <img src="images/icon-image/fact4.png" alt="social media icon">
             </span>
             <div class="ts-service-box-content">
-              </br>
+              <br></br>
               <h4>Redes Sociais</h4>
               <p>
                 <a href="https://www.facebook.com/forma.reforma.7" aria-label="Facebook"><i
                   class="fab fa-facebook-f"></i> Facebook</a>
-                </br>
-                </br>
+                  <br></br>
+                  <br></br>
                 <a href="https://www.instagram.com/formaereforma__/" aria-label="Instagram"><i
                   class="fab fa-instagram"></i> Instagram</a>
               </p>
@@ -511,11 +511,11 @@
           <div class="ts-service-box-bg text-center h-100">
             <span class="ts-service-icon icon-round">
               <a href="https://wa.me/5571991202969" target="_blank">
-                <img loading="lazy" src="images/whatsapp-icone.png" alt="social-media-icon">
+                <img loading="lazy" src="images/whatsapp-icone.png" alt="whatsapp icon">
               </a>
             </span>
             <div class="ts-service-box-content">
-              </br>
+              <br></br>
               <h4>WhatsApp</h4>
               <p id="comp-whatsapp">(+55) 71 99120-2969</p>
               <button onclick="copyText('comp-whatsapp')">Copiar numero</button>
@@ -539,14 +539,14 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label>Nome</label>
-                  <input id="client-name" class="form-control form-control-name" name="name" id="name" placeholder="" type="text" required>
+                  <input class="form-control form-control-name" name="name" id="name" placeholder="" type="text" required>
                 </div>
               </div>
 
             </div>
             <div class="form-group">
               <label>Menssagem</label>
-              <textarea id="text-area" class="form-control form-control-message" name="message" id="message" placeholder="" rows="10"
+              <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10"
                 required></textarea>
             </div>
             <div class="text-right"><br>
@@ -594,7 +594,7 @@
         <div class="row justify-content-between">
           <div class="col-lg-4 col-md-6 footer-widget footer-about">
             <h3 class="widget-title">Sobre Nós</h3>
-            <img loading="lazy" width="200px" class="footer-logo" src="images/footer-logo-pequeno.png" alt="Constra">
+            <img loading="lazy" width="200" class="footer-logo" src="images/footer-logo-pequeno.png" alt="Forma e Reformas">
             <p>Formas e Reformas Construção é uma empresa de serviços em geral na area de construção civil. Atuamos em Salvador e região metropolitana.</p>
             <div class="footer-social">
               <ul>
@@ -639,7 +639,7 @@
   <script src="js/script.js"></script>
 
 
-  <script type="text/javascript">
+  <script>
     // INDEX PAGE PROJECT SECTION
     function selectProject(argument) {
       var active_element = document.getElementsByClassName("active")
@@ -780,8 +780,8 @@
     }
 
     function sendMessage(){        
-      var name = document.getElementById("client-name")
-      var message = document.getElementById("text-area")
+      var name = document.getElementById("name")
+      var message = document.getElementById("message")
       var readyMessage = "Aqui é " + name.value + ", \n" + message.value
       var url = "https://wa.me/5571991202969?text=" + encodeURIComponent(readyMessage)
       window.open(url, "_blank")
