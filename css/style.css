@@ -822,7 +822,7 @@ ul.top-info-box li .info-box .info-box-subtitle {
   line-height: normal;
   font-size: 15px;
   font-weight: 700;
-  color: #fff;
+  color: #000;
 }
 
 ul.top-info-box li .info-box .info-box-subtitle-mails {
@@ -3353,6 +3353,13 @@ label {
   background: #ffb600;
   color: #fff;
   border: 1px solid transparent;
+}
+
+
+.whatsapp-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Error page
