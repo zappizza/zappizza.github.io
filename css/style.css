@@ -1904,18 +1904,18 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 .shuffle-item {
   padding: 0;
 }
-.shuffle-item .project-img-container {
+.shuffle-item .project-img-container, .single-project-img-container {
   position: relative;
   overflow: hidden;
 }
-.shuffle-item .project-img-container img {
+.shuffle-item .project-img-container img, .single-project-img-container img {
   transform: perspective(1px) scale3d(1.1, 1.1, 1);
   transition: all 400ms;
 }
-.shuffle-item .project-img-container:hover img {
+.shuffle-item .project-img-container:hover img, .single-project-img-container:hover img {
   transform: perspective(1px) scale3d(1.15, 1.15, 1);
 }
-.shuffle-item .project-img-container:after {
+.shuffle-item .project-img-container:after, .single-project-img-container:after {
   opacity: 0;
   position: absolute;
   content: "";
@@ -1930,7 +1930,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 .shuffle-item .project-img-container:hover:after {
   opacity: 1;
 }
-.shuffle-item .project-img-container .gallery-popup .gallery-icon {
+.shuffle-item .project-img-container .gallery-popup .gallery-icon, .single-project-img-container .gallery-popup .gallery-icon{
   position: absolute;
   top: 0;
   right: 0;
@@ -1942,11 +1942,11 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   transform: perspective(1px) scale3d(0, 0, 0);
   transition: all 400ms;
 }
-.shuffle-item .project-img-container:hover .gallery-popup .gallery-icon {
+.shuffle-item .project-img-container:hover .gallery-popup .gallery-icon, .single-project-img-container:hover .gallery-popup .gallery-icon{
   opacity: 1;
   transform: perspective(1px) scale3d(1, 1, 1);
 }
-.shuffle-item .project-img-container .project-item-info {
+.shuffle-item .project-img-container .project-item-info, .single-project-img-container .project-item-info {
   position: absolute;
   top: 50%;
   margin-top: -10%;
@@ -1956,21 +1956,21 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   padding: 0 30px;
   z-index: 1;
 }
-.shuffle-item .project-img-container .project-item-info-content {
+.shuffle-item .project-img-container .project-item-info-content, .single-project-img-container .project-item-info-content{
   opacity: 0;
   transform: perspective(1px) translate3d(0, 15px, 0);
   transition: all 400ms;
 }
-.shuffle-item .project-img-container .project-item-info-content .project-item-title {
+.shuffle-item .project-img-container .project-item-info-content .project-item-title, .single-project-img-container .project-item-info-content .project-item-title{
   font-size: 20px;
 }
-.shuffle-item .project-img-container .project-item-info-content .project-item-title a {
+.shuffle-item .project-img-container .project-item-info-content .project-item-title a, .single-project-img-container .project-item-info-content .project-item-title a{
   color: #fff;
 }
-.shuffle-item .project-img-container .project-item-info-content .project-item-title a:hover {
+.shuffle-item .project-img-container .project-item-info-content .project-item-title a:hover, .single-project-img-container .project-item-info-content .project-item-title a:hover{
   color: #ffb600;
 }
-.shuffle-item .project-img-container .project-item-info-content .project-cat {
+.shuffle-item .project-img-container .project-item-info-content .project-cat, .single-project-img-container .project-item-info-content .project-cat{
   background: #ffb600;
   display: inline-block;
   padding: 2px 8px;
@@ -1979,7 +1979,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   font-size: 10px;
   text-transform: uppercase;
 }
-.shuffle-item .project-img-container:hover .project-item-info-content {
+.shuffle-item .project-img-container:hover .project-item-info-content, .single-project-img-container:hover .project-item-info-content{
   opacity: 1;
   transform: perspective(1px) translate3d(0, 0, 0);
 }
