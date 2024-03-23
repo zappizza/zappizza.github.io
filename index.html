@@ -673,6 +673,19 @@
       }
     }
 
+    function copyText(text) {
+      // Get the text field
+      var textValue = document.getElementById(text);
+      // Copy the text inside the text field
+      navigator.clipboard.writeText(textValue.innerText);
+      // Alert the copied text
+      var message = "Email"
+      if (text == "comp-whatsapp"){
+        message = "WhatsApp"
+      }
+      alert(message + " copiado: " + textValue.innerText);
+    }
+
     function displayModal(event) {
       modal = document.getElementById("myModal-" + event)
       modal.style.display = "block";
@@ -722,9 +735,11 @@
               <div class="project-item-info">
                 <div class="project-item-info-content">
                   <h3 class="project-item-title">
-                    <a href="projects-single.html#${encodeURIComponent(category)}" aria-label="${title}">${project}</a>
+                    <a href="projects-single.html#${encodeURIComponent(category)}" aria-label="${title}">${category}</a>
                   </h3>
-                  <p class="project-cat">${category}</p>
+                  <a href="projects-single.html#${encodeURIComponent(category)}" aria-label="${title}">
+                    <p class="project-cat">Ver mais fotos</p>
+                  </a>
                 </div>
               </div>
             </div>`
