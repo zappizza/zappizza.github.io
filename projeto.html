@@ -253,7 +253,8 @@
           
           // Image div
           var imageBlock = document.createElement('div');
-          imageBlock.className = "col-lg-10 col-md-6 shuffle-item"
+          imageBlock.className = "col-lg-12 shuffle-item"
+          imageBlock.setAttribute("id", "img-frame")
           imageBlock.setAttribute("data-groups", "[&quot;contrucao&quot;,&quot;reforma&quot;]")
           imageBlock.innerHTML = `<div class="single-project-img-container">
                 <a class="gallery-popup" href="${img_url}">

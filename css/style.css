@@ -101,6 +101,12 @@ body {
   padding: 0;
 }
 
+#img-frame {
+  display: flex;
+  justify-content: center; 
+  padding-bottom: 70px;
+}
+
 .body-inner {
   position: relative;
   overflow: hidden;
