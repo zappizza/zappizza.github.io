@@ -255,56 +255,9 @@
   <script src="js/script.js"></script>
 
 
-  <script>
-    $(document).ready(function(){
-      var pageLocation = window.location.href.split("/").pop();
-      
-      var category_id = pageLocation.split("#").pop()
-      document.getElementById("title-category").innerHTML = decodeURIComponent(category_id.toUpperCase());
-      
-      function photosCategory(category) {
-        var images = category["resources"]
-        for (var i in images) {
-          var image = images[i]
-          var domain = "https://res.cloudinary.com/nuci/image/upload/" + "v" + image.version
-          var img_url = domain  + "/" + encodeURIComponent(image.public_id) + "." + image.format
-          var description = image["context"]["custom"]["alt"]
-          var title = image["context"]["custom"]["caption"]
-          var project = image.public_id.split("/")[0]
-          var category = image["context"]["custom"]["Categoria"]
-          
-          // Image div
-          var imageBlock = document.createElement('div');
-          imageBlock.className = "col-lg-12 shuffle-item"
-          imageBlock.setAttribute("id", "img-frame")
-          imageBlock.setAttribute("data-groups", "[&quot;contrucao&quot;,&quot;reforma&quot;]")
-          imageBlock.innerHTML = `<div class="single-project-img-container">
-                <a class="gallery-popup" href="${img_url}">
-                  <img class="img-fluid" src="${img_url}" alt="${title}">
-                  <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                </a>
-              </div>
-              <br>`
-          
-          document.getElementById("image-container").appendChild(imageBlock);
-
-        }
-
-      };
-
-      var settings = {
-        "url": `https://res.cloudinary.com/nuci/image/list/${category_id}.json`,
-        "method": "GET",
-        "timeout": 0,
-        crossDomain: true,
-      };
-
-      $.ajax(settings).done(function (response) {
-        console.log("test ajax")
-        photosCategory(response);
-      });
-    });
-  </script>
+  <script src="js/model.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/controller.js"></script>
 
 
   <!-- Bootstrap jQuery -->
