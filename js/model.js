@@ -10,23 +10,23 @@ var CloudinaryModel = (function () {
   }
 
   // Fetches the homepage image list (tagged "inicio" in Cloudinary)
-  function getHomepageImages(callback) {
+  function getHomepageImages(onSuccess, onError) {
     $.ajax({
       url: BASE + '/image/list/inicio.json',
       method: 'GET',
       timeout: 0,
       crossDomain: true
-    }).done(callback);
+    }).done(onSuccess).fail(onError);
   }
 
   // Fetches images for a specific project category by its Cloudinary tag name
-  function getCategoryImages(categoryId, callback) {
+  function getCategoryImages(categoryId, onSuccess, onError) {
     $.ajax({
       url: BASE + '/image/list/' + categoryId + '.json',
       method: 'GET',
       timeout: 0,
       crossDomain: true
-    }).done(callback);
+    }).done(onSuccess).fail(onError);
   }
 
   return {

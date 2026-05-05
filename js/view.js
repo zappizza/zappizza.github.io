@@ -54,9 +54,40 @@ var ProjectView = {
     document.getElementById('image-container').appendChild(block);
   },
 
-  // Writes the decoded, uppercased category name into the page heading
+  // Writes the uppercased category name into the page heading;
+  // the controller is responsible for decoding the value before passing it here
   updateCategoryTitle: function (categoryId) {
-    document.getElementById('title-category').innerHTML = decodeURIComponent(categoryId.toUpperCase());
+    document.getElementById('title-category').innerHTML = categoryId.toUpperCase();
+  },
+
+  // Injects a spinner into the container while an async load is in progress
+  showLoading: function (containerId) {
+    var spinner = document.createElement('div');
+    spinner.id = containerId + '-loading';
+    spinner.className = 'text-center';
+    spinner.style.cssText = 'padding: 40px 0; color: #999;';
+    spinner.innerHTML =
+      '<i class="fa fa-spinner fa-spin fa-3x"></i>' +
+      '<p style="margin-top: 12px;">Carregando projetos...</p>';
+    document.getElementById(containerId).appendChild(spinner);
+  },
+
+  // Removes the spinner injected by showLoading
+  hideLoading: function (containerId) {
+    var spinner = document.getElementById(containerId + '-loading');
+    if (spinner) spinner.parentNode.removeChild(spinner);
+  },
+
+  // Replaces the container content with a user-facing error message and a WhatsApp fallback link
+  showError: function (containerId) {
+    var error = document.createElement('div');
+    error.className = 'text-center';
+    error.style.cssText = 'padding: 40px 0; color: #888;';
+    error.innerHTML =
+      '<i class="fa fa-exclamation-circle fa-3x"></i>' +
+      '<p style="margin-top: 12px;">Não foi possível carregar os projetos.<br>' +
+      'Entre em contato pelo <a href="https://wa.me/5571991202969">WhatsApp</a>.</p>';
+    document.getElementById(containerId).appendChild(error);
   },
 
   // Binds the colorbox lightbox to all gallery links rendered so far;
