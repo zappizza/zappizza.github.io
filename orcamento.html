@@ -202,7 +202,7 @@
         <div class="container">
           <div class="row text-center">
               <div class="col-12">
-                <h3 class="service-box-title">Faça seu orçamento online e entraremos em contato em até 5 dias</h3>
+                <h3 class="service-box-title">Faça seu orçamento online e entraremos em contato em até 24 horas</h3>
                 <h3 class="service-box-title">Você tambem pode entrar em contato atravez do nosso WhatsApp
                     <a href="https://wa.me/5571991202969" target="_blank">
                         <img loading="lazy" src="images/whatsapp-icone.png" alt="whatsapp icon" width="25" height="25">
@@ -214,10 +214,22 @@
           <!--/ Title row end -->
       
           <div class="row">
-              
+
+            <!-- Progress bar -->
+            <div id="form-progress" style="width:100%; padding: 0 15px 24px 15px;">
+              <div id="step-indicator" style="font-weight:600; font-size:15px; margin-bottom:8px; color:#444;">
+                Etapa 1 de 3: Contato e Tipo de Serviço
+              </div>
+              <div style="background:#e0e0e0; border-radius:4px; height:8px;">
+                <div id="progress-bar-fill" style="background:#ffb600; height:8px; border-radius:4px; width:33%; transition:width 0.3s ease;"></div>
+              </div>
+            </div>
+
             <form id="fs-frm" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/mjvnedda" method="post" enctype="multipart/form-data">
-                <fieldset id="fs-frm-inputs" name="www.formaereformas.com">
-                <input type="hidden" name="Email enviado através do site www.formaereformas.com" id="formaereformas">
+              <input type="hidden" name="Email enviado através do site www.formaereformas.com" id="formaereformas">
+
+              <!-- STEP 1: Contato e Tipo de Serviço -->
+              <fieldset class="form-step" data-step="1" style="border:none; padding:0; margin:0;">
                 <label for="full-name">Nome</label>
                 <input type="text" name="Nome" id="name" placeholder="Nome" required="">
                 <label for="email-address">Email</label>
@@ -225,263 +237,217 @@
                 <label for="street-address">Endereço</label>
                 <input type="text" name="Endereço" id="street-address" placeholder="Rua" required="">
                 <input type="text" name="Complemento" id="unit" placeholder="Complemento do endereço">
-                <fieldset id="fs-frm-selects">
-                    <input type="text" name="Cidade" placeholder="Cidade" required="">
-                    <select name="Estado" required="">
-                    <option value="" selected="" disabled="">Estado</option>
-                    <option value="BA">Bahia</option>
-                    </select>
-                    <input type="text" name="Código Postal" placeholder="CEP" required="">
-            
-                    <label for="timely">Tipo do cliente</label>
-                    <select name="Tipo do cliente" id="cliente-type" required="">
-                    <option value="" selected="" disabled="">Favor selecionar</option>
-                    <option value="Pessoa física (CPF)">Pessoa física (CPF)</option>
-                    <option value="Pessoa jurídica (CNPJ)">Pessoa jurídica (CNPJ)</option>
-                    </select>
-            
-                    <label for="timely">Tipo de imóvel</label>
-                    <select name="Tipo do imóvel" id="immobile-type" required="">
-                    <option value="" selected="" disabled="">Favor selecionar</option>
-                    <option value="Apartamento">Apartamento</option>
-                    <option value="Residência">Residência</option>
-                    <option value="Comercial">Comercial</option>
-                    </select>
-                    
-                    <label for="timely">Finalidade do serviço</label>
-                    <select name="Finalidade do serviço" id="service-goal" required="">
-                    <option value="" selected="" disabled="">Favor selecionar</option>
-                    <option value="Construção">Construção</option>
-                    <option value="Projeto">Projeto</option>
-                    <option value="Reforma geral">Reforma geral</option>
-                    <option value="Reforma de 2 ou mais cômodos">Reforma de 2 ou mais cômodos</option>
-                    <option value="Reforma de 1 cômodo">Reforma de 1 cômodo</option>
-                    </select>
-            
-                    <label for="timely">Quais serviços estão envolvidos?</label>
-                    <fieldset id="fs-frm-work-type" required="">
-                    <input type="checkbox" id="demolition" name="Serviços envolvidos" value="Demolição">
-                    <label style="width:300px;display:inline-block;" id="label_demolition" for="demolition">Demolição</label><br>
-                    <input type="checkbox" id="telhado" name="Serviços envolvidos" value="Telhado, calha e rufos">
-                    <label style="width:300px;display:inline-block;" id="label_telhado" for="telhado">Telhado, calha e rufos</label><br>
-                    <input type="checkbox" id="hidraulicos" name="Serviços envolvidos" value="Instalações ou reparos hidráulicos">
-                    <label style="width:300px;display:inline-block;" id="label_hidraulicos" for="hidraulicos">Instalações ou reparos hidráulicos</label><br>
-                    <input type="checkbox" id="eletricos" name="Serviços envolvidos" value="Instalações ou reparos elétricos">
-                    <label style="width:300px;display:inline-block;" id="label_eletricos" for="eletricos">Instalações ou reparos elétricos</label><br>
-                    <input type="checkbox" id="forro" name="Serviços envolvidos" value="Forro e iluminação">
-                    <label style="width:300px;display:inline-block;" id="label_forro" for="forro">Forro e iluminação</label><br>
-                    <input type="checkbox" id="pintura" name="Serviços envolvidos" value="Pintura">
-                    <label style="width:300px;display:inline-block;" id="label_pintura" for="pintura">Pintura</label><br>
-                    <input type="checkbox" id="pisos" name="Serviços envolvidos" value="Instalação ou troca de pisos/revestimentos">
-                    <label style="width:300px;display:inline-block;" id="label_pisos" for="pisos">Instalação ou troca de pisos/revestimentos</label><br>
-                    <input type="checkbox" id="reparo" name="Serviços envolvidos" value="Reparo de rachaduras">
-                    <label style="width:300px;display:inline-block;" id="label_reparo" for="reparo">Reparo de rachaduras</label><br>
-                    <input type="checkbox" id="alvenaria" name="Serviços envolvidos" value="Trabalhos em alvenaria">
-                    <label style="width:300px;display:inline-block;" id="label_alvenaria" for="alvenaria">Trabalhos em alvenaria</label><br>
-                    </fieldset><br>
+                <input type="text" name="Cidade" placeholder="Cidade" required="">
+                <select name="Estado" required="">
+                  <option value="" selected="" disabled="">Estado</option>
+                  <option value="BA">Bahia</option>
+                </select>
+                <input type="text" name="Código Postal" placeholder="CEP" required="">
+                <label for="cliente-type">Tipo do cliente</label>
+                <select name="Tipo do cliente" id="cliente-type" required="">
+                  <option value="" selected="" disabled="">Favor selecionar</option>
+                  <option value="Pessoa física (CPF)">Pessoa física (CPF)</option>
+                  <option value="Pessoa jurídica (CNPJ)">Pessoa jurídica (CNPJ)</option>
+                </select>
+                <label for="immobile-type">Tipo de imóvel</label>
+                <select name="Tipo do imóvel" id="immobile-type" required="">
+                  <option value="" selected="" disabled="">Favor selecionar</option>
+                  <option value="Apartamento">Apartamento</option>
+                  <option value="Residência">Residência</option>
+                  <option value="Comercial">Comercial</option>
+                </select>
+                <label for="service-goal">Finalidade do serviço</label>
+                <select name="Finalidade do serviço" id="service-goal" required="">
+                  <option value="" selected="" disabled="">Favor selecionar</option>
+                  <option value="Construção">Construção</option>
+                  <option value="Projeto">Projeto</option>
+                  <option value="Reforma geral">Reforma geral</option>
+                  <option value="Reforma de 2 ou mais cômodos">Reforma de 2 ou mais cômodos</option>
+                  <option value="Reforma de 1 cômodo">Reforma de 1 cômodo</option>
+                </select>
+              </fieldset>
 
-                    <h5 for="timely">Descrição dos serviços</h5>
-                    <p for="timely">
-                    Campo para descrição dos serviços que serão executados no imóvel. Inicie com nome da área e em seguida descreva os serviços correspondentes, sendo o mais detalhado possível para auxiliar na elaboração do seu orçamento. Exemplo: Banheiro - Remoção de pisos e revestimentos, Instalação de novos pisos e revestimentos.
-                    </p>
-                    <textarea rows="5" name="note" id="service-description" placeholder="Seja o mais detalhado possível para um orçamento mais assertivo."></textarea>
-                </fieldset>
-
-                <label for="timely">Qual a metragem aproximada da área?</label>
-                <div name="Serviços envolvidos" id="measuring">
-                    <label style="height:25px; width:300px;" id="label_up-to-50" for="up-to-50">
-                        <input style="height:15px; width:25px;" type="radio" id="up-to-50" name="Medidas" value="Até 50m²">
-                        Até 50m²
-                    </label>
-                    <label style="height:25px; width:300px;" id="label_up-to-100" for="up-to-100">
-                        <input style="height:15px; width:25px;" type="radio" id="up-to-100" name="Medidas" value="Até 100m²">
-                        Até 100m²
-                    </label>
-                    <label style="height:25px; width:300px;" id="label_up-to-150" for="up-to-150">
-                        <input style="height:15px; width:25px;" type="radio" id="up-to-150" name="Medidas" value="Até 150m²">
-                        Até 150m²
-                    </label>
-                    
-                    <label style="height:25px; width:300px;" id="label_up-to-200" for="up-to-200">
-                        <input style="height:15px; width:25px;" type="radio" id="up-to-200" name="Medidas" value="Até 200m²">
-                        Até 200m²
-                    </label>
-                    <label style="height:25px; width:300px;" id="label_more-than-200" for="more-than-200">
-                        <input style="height:15px; width:25px;" type="radio" id="more-than-200" name="Medidas" value="Mais de 200m²">
-                        Mais de 200m²
-                    </label>
-                    <label style="height:25px; width:300px;" id="label_another" for="another">
-                        Outro:
-                    </label>
-                    <input type="text" name="Medida especifica" id="another" placeholder="Qual a metragem aproximada da área?">
+              <!-- STEP 2: Detalhes do Projeto -->
+              <fieldset class="form-step" data-step="2" style="display:none; border:none; padding:0; margin:0;">
+                <label>Quais serviços estão envolvidos?</label>
+                <div id="fs-frm-work-type">
+                  <input type="checkbox" id="demolition" name="Serviços envolvidos" value="Demolição">
+                  <label style="width:300px;display:inline-block;" for="demolition">Demolição</label><br>
+                  <input type="checkbox" id="telhado" name="Serviços envolvidos" value="Telhado, calha e rufos">
+                  <label style="width:300px;display:inline-block;" for="telhado">Telhado, calha e rufos</label><br>
+                  <input type="checkbox" id="hidraulicos" name="Serviços envolvidos" value="Instalações ou reparos hidráulicos">
+                  <label style="width:300px;display:inline-block;" for="hidraulicos">Instalações ou reparos hidráulicos</label><br>
+                  <input type="checkbox" id="eletricos" name="Serviços envolvidos" value="Instalações ou reparos elétricos">
+                  <label style="width:300px;display:inline-block;" for="eletricos">Instalações ou reparos elétricos</label><br>
+                  <input type="checkbox" id="forro" name="Serviços envolvidos" value="Forro e iluminação">
+                  <label style="width:300px;display:inline-block;" for="forro">Forro e iluminação</label><br>
+                  <input type="checkbox" id="pintura" name="Serviços envolvidos" value="Pintura">
+                  <label style="width:300px;display:inline-block;" for="pintura">Pintura</label><br>
+                  <input type="checkbox" id="pisos" name="Serviços envolvidos" value="Instalação ou troca de pisos/revestimentos">
+                  <label style="width:300px;display:inline-block;" for="pisos">Instalação ou troca de pisos/revestimentos</label><br>
+                  <input type="checkbox" id="reparo" name="Serviços envolvidos" value="Reparo de rachaduras">
+                  <label style="width:300px;display:inline-block;" for="reparo">Reparo de rachaduras</label><br>
+                  <input type="checkbox" id="alvenaria" name="Serviços envolvidos" value="Trabalhos em alvenaria">
+                  <label style="width:300px;display:inline-block;" for="alvenaria">Trabalhos em alvenaria</label><br>
+                </div><br>
+                <h5>Descrição dos serviços</h5>
+                <p>Campo para descrição dos serviços que serão executados no imóvel. Inicie com nome da área e em seguida descreva os serviços correspondentes, sendo o mais detalhado possível para auxiliar na elaboração do seu orçamento. Exemplo: Banheiro - Remoção de pisos e revestimentos, Instalação de novos pisos e revestimentos.</p>
+                <textarea rows="5" name="note" id="service-description" placeholder="Seja o mais detalhado possível para um orçamento mais assertivo."></textarea>
+                <label>Qual a metragem aproximada da área?</label>
+                <div id="measuring">
+                  <label style="height:25px; width:300px;" for="up-to-50">
+                    <input style="height:15px; width:25px;" type="radio" id="up-to-50" name="Medidas" value="Até 50m²"> Até 50m²
+                  </label>
+                  <label style="height:25px; width:300px;" for="up-to-100">
+                    <input style="height:15px; width:25px;" type="radio" id="up-to-100" name="Medidas" value="Até 100m²"> Até 100m²
+                  </label>
+                  <label style="height:25px; width:300px;" for="up-to-150">
+                    <input style="height:15px; width:25px;" type="radio" id="up-to-150" name="Medidas" value="Até 150m²"> Até 150m²
+                  </label>
+                  <label style="height:25px; width:300px;" for="up-to-200">
+                    <input style="height:15px; width:25px;" type="radio" id="up-to-200" name="Medidas" value="Até 200m²"> Até 200m²
+                  </label>
+                  <label style="height:25px; width:300px;" for="more-than-200">
+                    <input style="height:15px; width:25px;" type="radio" id="more-than-200" name="Medidas" value="Mais de 200m²"> Mais de 200m²
+                  </label>
+                  <label style="height:25px; width:300px;" for="another">Outro:</label>
+                  <input type="text" name="Medida especifica" id="another" placeholder="Qual a metragem aproximada da área?">
                 </div>
-
-                <label for="timely">Qual a idade do imóvel?</label>
-                <div name="Qual a idade do imóvel" id="property-age">
-                    <label style="height:25px; width:300px;" id="immobile-new" for="new-immobile">
-                        <input style="height:15px; width:25px;" type="radio" id="new-immobile" name="Idade do imóvel" value="Imóvel novo">
-                        Novo - recém entregue pela construtora
-                    </label>
-                    <label style="height:25px; width:300px;" id="immobile-old" for="old-immobile">
-                        <input style="height:15px; width:25px;" type="radio" id="old-immobile" name="Idade do imóvel" value="Imóvel velho">
-                        Antigo - já estava habitado
-                    </label>
+                <label>Qual a idade do imóvel?</label>
+                <div id="property-age">
+                  <label style="height:25px; width:300px;" for="new-immobile">
+                    <input style="height:15px; width:25px;" type="radio" id="new-immobile" name="Idade do imóvel" value="Imóvel novo"> Novo - recém entregue pela construtora
+                  </label>
+                  <label style="height:25px; width:300px;" for="old-immobile">
+                    <input style="height:15px; width:25px;" type="radio" id="old-immobile" name="Idade do imóvel" value="Imóvel velho"> Antigo - já estava habitado
+                  </label>
                 </div>
+              </fieldset>
 
-                <label for="timely">Deseja emissão de TRT?</label>
-                <div name="Deseja emissão de TRT" id="trt-emission">
-                    <label style="height:25px; width:300px;" id="trt-emission-yes" for="emission-yes">
-                        <input style="height:15px; width:25px;" type="radio" id="emission-yes" name="Emissão TRT" value="Sim">
-                        Sim
-                    </label>
-                    <label style="height:25px; width:300px;" id="trt-emission-no" for="emission-no">
-                        <input style="height:15px; width:25px;" type="radio" id="emission-no" name="Emissão TRT" value="Não">
-                        Não
-                    </label>
+              <!-- STEP 3: Logística -->
+              <fieldset class="form-step" data-step="3" style="display:none; border:none; padding:0; margin:0;">
+                <label>Deseja emissão de TRT?</label>
+                <div id="trt-emission">
+                  <label style="height:25px; width:300px;" for="emission-yes">
+                    <input style="height:15px; width:25px;" type="radio" id="emission-yes" name="Emissão TRT" value="Sim"> Sim
+                  </label>
+                  <label style="height:25px; width:300px;" for="emission-no">
+                    <input style="height:15px; width:25px;" type="radio" id="emission-no" name="Emissão TRT" value="Não"> Não
+                  </label>
                 </div>
-                
-                <label for="timely">Há espaço para guarda de materiais?</label>
-                <div name="Há espaço para guarda de materiais" id="storage-space">
-                    <label style="height:25px; width:300px;" id="storage-space-yes" for="storage-yes">
-                        <input style="height:15px; width:25px;" type="radio" id="storage-yes" name="Espaço para guardar materiais" value="Sim">
-                        Sim
-                    </label>
-                    <label style="height:25px; width:300px;" id="storage-space-no" for="storage-no">
-                        <input style="height:15px; width:25px;" type="radio" id="storage-no" name="Espaço para guardar materiais" value="Não">
-                        Não
-                    </label>
+                <label>Há espaço para guarda de materiais?</label>
+                <div id="storage-space">
+                  <label style="height:25px; width:300px;" for="storage-yes">
+                    <input style="height:15px; width:25px;" type="radio" id="storage-yes" name="Espaço para guardar materiais" value="Sim"> Sim
+                  </label>
+                  <label style="height:25px; width:300px;" for="storage-no">
+                    <input style="height:15px; width:25px;" type="radio" id="storage-no" name="Espaço para guardar materiais" value="Não"> Não
+                  </label>
                 </div>
-
-                <label for="timely">Já possui algum projeto?</label>
-                <div name="Já possui algum projeto" id="existing-project">
-                    <label style="height:25px; width:300px;" id="existing-project-yes" for="exist-project-yes">
-                        <input style="height:15px; width:25px;" type="radio" id="exist-project-yes" name="Já possui algum projeto" value="Sim">
-                        Sim
-                    </label>
-                    <label style="height:25px; width:300px;" id="existing-project-no" for="exist-project-no">
-                        <input style="height:15px; width:25px;" type="radio" id="exist-project-no" name="Já possui algum projeto" value="Não">
-                        Não
-                    </label>
+                <label>Já possui algum projeto?</label>
+                <div id="existing-project">
+                  <label style="height:25px; width:300px;" for="exist-project-yes">
+                    <input style="height:15px; width:25px;" type="radio" id="exist-project-yes" name="Já possui algum projeto" value="Sim"> Sim
+                  </label>
+                  <label style="height:25px; width:300px;" for="exist-project-no">
+                    <input style="height:15px; width:25px;" type="radio" id="exist-project-no" name="Já possui algum projeto" value="Não"> Não
+                  </label>
                 </div>
-
-                <label for="timely">Possui a planta do imóvel no estado atual?</label>
-                <div name="Possui a planta do imóvel no estado atual" id="have-design-plans">
-                    <label style="height:25px; width:300px;" id="have-design-plans-yes" for="have-design-yes">
-                        <input style="height:15px; width:25px;" type="radio" id="have-design-yes" name="Possui a planta do imóvel no estado atual" value="Sim">
-                        Sim
-                    </label>
-                    <label style="height:25px; width:300px;" id="have-design-plans-no" for="have-design-no">
-                        <input style="height:15px; width:25px;" type="radio" id="have-design-no" name="Possui a planta do imóvel no estado atual" value="Não">
-                        Não
-                    </label>
+                <label>Possui a planta do imóvel no estado atual?</label>
+                <div id="have-design-plans">
+                  <label style="height:25px; width:300px;" for="have-design-yes">
+                    <input style="height:15px; width:25px;" type="radio" id="have-design-yes" name="Possui a planta do imóvel no estado atual" value="Sim"> Sim
+                  </label>
+                  <label style="height:25px; width:300px;" for="have-design-no">
+                    <input style="height:15px; width:25px;" type="radio" id="have-design-no" name="Possui a planta do imóvel no estado atual" value="Não"> Não
+                  </label>
                 </div>
-
-                <label for="timely">O imóvel está habitado/ocupado atualmente?</label>
-                <div name="O imóvel está habitado/ocupado atualmente" id="is-vacant">
-                    <label style="height:25px; width:300px;" id="is-vacant-yes" for="vacant-yes">
-                        <input style="height:15px; width:25px;" type="radio" id="vacant-yes" name="O imóvel está habitado/ocupado atualmente" value="Sim">
-                        Sim
-                    </label>
-                    <label style="height:25px; width:300px;" id="is-vacant-no" for="vacant-no">
-                        <input style="height:15px; width:25px;" type="radio" id="vacant-no" name="O imóvel está habitado/ocupado atualmente" value="Não">
-                        Não
-                    </label>
+                <label>O imóvel está habitado/ocupado atualmente?</label>
+                <div id="is-vacant">
+                  <label style="height:25px; width:300px;" for="vacant-yes">
+                    <input style="height:15px; width:25px;" type="radio" id="vacant-yes" name="O imóvel está habitado/ocupado atualmente" value="Sim"> Sim
+                  </label>
+                  <label style="height:25px; width:300px;" for="vacant-no">
+                    <input style="height:15px; width:25px;" type="radio" id="vacant-no" name="O imóvel está habitado/ocupado atualmente" value="Não"> Não
+                  </label>
                 </div>
-
-                <label for="timely">O imóvel está disponível para visita técnica previamente agendada?</label>
-                <div name="O imóvel está disponível para visita técnica previamente agendada" id="immobile-visit">
-                    <label style="height:25px; width:300px;" id="immobile-visit-yes" for="available-visit-yes">
-                        <input style="height:15px; width:25px;" type="radio" id="available-visit-yes" name="O imóvel está disponível para visita técnica previamente agendada" value="Sim">
-                        Sim
-                    </label>
-                    <label style="height:25px; width:300px;" id="immobile-visit-no" for="available-visit-no">
-                        <input style="height:15px; width:25px;" type="radio" id="available-visit-no" name="O imóvel está disponível para visita técnica previamente agendada" value="Não">
-                        Não
-                    </label>
+                <label>O imóvel está disponível para visita técnica previamente agendada?</label>
+                <div id="immobile-visit">
+                  <label style="height:25px; width:300px;" for="available-visit-yes">
+                    <input style="height:15px; width:25px;" type="radio" id="available-visit-yes" name="O imóvel está disponível para visita técnica previamente agendada" value="Sim"> Sim
+                  </label>
+                  <label style="height:25px; width:300px;" for="available-visit-no">
+                    <input style="height:15px; width:25px;" type="radio" id="available-visit-no" name="O imóvel está disponível para visita técnica previamente agendada" value="Não"> Não
+                  </label>
                 </div>
-
-                <label for="timely">É proprietário do imóvel?</label>
-                <div name="É proprietário do imóvel" id="own-immobile">
-                    <label style="height:25px; width:300px;" id="own-immobile-yes" for="immobile-owner-yes">
-                        <input style="height:15px; width:25px;" type="radio" id="immobile-owner-yes" name="É proprietário do imóvel" value="Sim">
-                        Sim
-                    </label>
-                    <label style="height:25px; width:300px;" id="own-immobile-no" for="immobile-owner-no">
-                        <input style="height:15px; width:25px;" type="radio" id="immobile-owner-no" name="É proprietário do imóvel" value="Não">
-                        Não
-                    </label>
-                    <label style="height:25px; width:300px;" id="own-immobile-maybe" for="immobile-owner-maybe">
-                        <input style="height:15px; width:25px;" type="radio" id="immobile-owner-maybe" name="É proprietário do imóvel" value="Considerando comprar">
-                        Estou pensando comprar o imóvel
-                    </label>
+                <label>É proprietário do imóvel?</label>
+                <div id="own-immobile">
+                  <label style="height:25px; width:300px;" for="immobile-owner-yes">
+                    <input style="height:15px; width:25px;" type="radio" id="immobile-owner-yes" name="É proprietário do imóvel" value="Sim"> Sim
+                  </label>
+                  <label style="height:25px; width:300px;" for="immobile-owner-no">
+                    <input style="height:15px; width:25px;" type="radio" id="immobile-owner-no" name="É proprietário do imóvel" value="Não"> Não
+                  </label>
+                  <label style="height:25px; width:300px;" for="immobile-owner-maybe">
+                    <input style="height:15px; width:25px;" type="radio" id="immobile-owner-maybe" name="É proprietário do imóvel" value="Considerando comprar"> Estou pensando comprar o imóvel
+                  </label>
                 </div>
-
-                <label for="timely">Responsabilidade de descarte de entulho?</label>
-                <div name="Responsabilidade de descarte de entulho" id="cleaning-responsabilities">
-                    <label style="height:25px; width:300px;" id="cleaning-owner" for="clean-duty-ownder">
-                        <input style="height:15px; width:25px;" type="radio" id="clean-duty-ownder" name="Responsabilidade de descarte de entulho" value="Do proprietário">
-                        Do proprietário
-                    </label>
-                    <label style="height:25px; width:300px;" id="cleaning-company" for="clean-duty-company">
-                        <input style="height:15px; width:25px;" type="radio" id="clean-duty-company" name="Responsabilidade de descarte de entulho" value="Da empresa">
-                        Da empresa
-                    </label>
+                <label>Responsabilidade de descarte de entulho?</label>
+                <div id="cleaning-responsabilities">
+                  <label style="height:25px; width:300px;" for="clean-duty-ownder">
+                    <input style="height:15px; width:25px;" type="radio" id="clean-duty-ownder" name="Responsabilidade de descarte de entulho" value="Do proprietário"> Do proprietário
+                  </label>
+                  <label style="height:25px; width:300px;" for="clean-duty-company">
+                    <input style="height:15px; width:25px;" type="radio" id="clean-duty-company" name="Responsabilidade de descarte de entulho" value="Da empresa"> Da empresa
+                  </label>
                 </div>
-
-                <label for="timely">Responsabilidade de materiais?</label>
-                <div name="Responsabilidade de materiais" id="materials-responsabilities">
-                    <label style="height:25px; width:300px;" id="materials-owner" for="materials-resp-ownder">
-                        <input style="height:15px; width:25px;" type="radio" id="materials-resp-ownder" name="Responsabilidade de materiais" value="Do proprietário">
-                        Do proprietário
-                    </label>
-                    <label style="height:25px; width:300px;" id="materials-company" for="materials-resp-company">
-                        <input style="height:15px; width:25px;" type="radio" id="materials-resp-company" name="Responsabilidade de materiais" value="Da empresa">
-                        Da empresa
-                    </label>
+                <label>Responsabilidade de materiais?</label>
+                <div id="materials-responsabilities">
+                  <label style="height:25px; width:300px;" for="materials-resp-ownder">
+                    <input style="height:15px; width:25px;" type="radio" id="materials-resp-ownder" name="Responsabilidade de materiais" value="Do proprietário"> Do proprietário
+                  </label>
+                  <label style="height:25px; width:300px;" for="materials-resp-company">
+                    <input style="height:15px; width:25px;" type="radio" id="materials-resp-company" name="Responsabilidade de materiais" value="Da empresa"> Da empresa
+                  </label>
                 </div>
-
-                <label for="timely">Deseja parcelar a realização do serviço no cartão de crédito?</label>
-                <div name="Deseja parcelar a realização do serviço no cartão de crédito" id="payment-method">
-                    <label style="height:25px; width:300px;" id="credit-card-yes" for="on-card-yes">
-                        <input style="height:15px; width:25px;" type="radio" id="on-card-yes" name="Deseja parcelar a realização do serviço no cartão de crédito" value="Sim">
-                        Sim
-                    </label>
-                    <label style="height:25px; width:300px;" id="credit-card-no" for="on-card-no">
-                        <input style="height:15px; width:25px;" type="radio" id="on-card-no" name="Deseja parcelar a realização do serviço no cartão de crédito" value="Não">
-                        Não
-                    </label>
+                <label>Deseja parcelar a realização do serviço no cartão de crédito?</label>
+                <div id="payment-method">
+                  <label style="height:25px; width:300px;" for="on-card-yes">
+                    <input style="height:15px; width:25px;" type="radio" id="on-card-yes" name="Deseja parcelar a realização do serviço no cartão de crédito" value="Sim"> Sim
+                  </label>
+                  <label style="height:25px; width:300px;" for="on-card-no">
+                    <input style="height:15px; width:25px;" type="radio" id="on-card-no" name="Deseja parcelar a realização do serviço no cartão de crédito" value="Não"> Não
+                  </label>
                 </div>
-
-                <label for="timely">Quando pretende começar o serviço?</label>
-                <div name="Quando pretende começar o serviço" id="start-time">
-                    <label style="height:25px; width:300px;" id="start-time-1" for="start-soon">
-                        <input style="height:15px; width:25px;" type="radio" id="start-soon" name="Quando pretende começar o serviço" value="Do proprietário">
-                        O mais breve possível
-                    </label>
-                    <label style="height:25px; width:300px;" id="start-time-2" for="start-in-a-month">
-                        <input style="height:15px; width:25px;" type="radio" id="start-in-a-month" name="Quando pretende começar o serviço" value="Da empresa">
-                        Daqui a 1 mês
-                    </label>
-                    <label style="height:25px; width:300px;" id="start-time-3" for="start-in-two-to-three-months">
-                        <input style="height:15px; width:25px;" type="radio" id="start-in-two-to-three-months" name="Quando pretende começar o serviço" value="Da empresa">
-                        De 2 a 3 meses
-                    </label>
-                    <label style="height:25px; width:300px;" id="start-time-4" for="start-after-three-months">
-                        <input style="height:15px; width:25px;" type="radio" id="start-after-three-months" name="Quando pretende começar o serviço" value="Da empresa">
-                        Mais de 3 meses
-                    </label>
-                    <label style="height:25px; width:300px;" id="start-time-5" for="no-start-date">
-                        <input style="height:15px; width:25px;" type="radio" id="no-start-date" name="Quando pretende começar o serviço" value="Da empresa">
-                        Não tenho pretensão de início ainda
-                    </label>
+                <label>Quando pretende começar o serviço?</label>
+                <div id="start-time">
+                  <label style="height:25px; width:300px;" for="start-soon">
+                    <input style="height:15px; width:25px;" type="radio" id="start-soon" name="Quando pretende começar o serviço" value="O mais breve possível"> O mais breve possível
+                  </label>
+                  <label style="height:25px; width:300px;" for="start-in-a-month">
+                    <input style="height:15px; width:25px;" type="radio" id="start-in-a-month" name="Quando pretende começar o serviço" value="Daqui a 1 mês"> Daqui a 1 mês
+                  </label>
+                  <label style="height:25px; width:300px;" for="start-in-two-to-three-months">
+                    <input style="height:15px; width:25px;" type="radio" id="start-in-two-to-three-months" name="Quando pretende começar o serviço" value="De 2 a 3 meses"> De 2 a 3 meses
+                  </label>
+                  <label style="height:25px; width:300px;" for="start-after-three-months">
+                    <input style="height:15px; width:25px;" type="radio" id="start-after-three-months" name="Quando pretende começar o serviço" value="Mais de 3 meses"> Mais de 3 meses
+                  </label>
+                  <label style="height:25px; width:300px;" for="no-start-date">
+                    <input style="height:15px; width:25px;" type="radio" id="no-start-date" name="Quando pretende começar o serviço" value="Não tenho pretensão de início ainda"> Não tenho pretensão de início ainda
+                  </label>
                 </div>
-
-                <label for="nota">Alguma outra informação?</label>
+                <label for="Nota">Alguma outra informação?</label>
                 <textarea rows="2" name="nota" id="Nota" placeholder="Informação adicional"></textarea>
                 <input type="hidden" name="_subject" id="email-subject" value="Orçamento">
+                <input type="submit" value="Enviar pedido" style="background-color: #ffb600; margin-top: 16px;">
+              </fieldset>
 
-                </fieldset>
-                <input type="submit" value="Enviar pedido" style="background-color: #ffb600;">
+              <!-- Step navigation buttons -->
+              <div id="form-nav" style="margin-top: 24px; display: flex; gap: 12px; align-items: center;">
+                <button type="button" id="btn-prev" onclick="formStepNav(-1)" style="display:none; padding:10px 24px; background:#fff; color:#333; border:2px solid #ffb600; border-radius:4px; cursor:pointer; font-size:15px;">&#8592; Anterior</button>
+                <button type="button" id="btn-next" onclick="formStepNav(1)" style="padding:10px 24px; background:#ffb600; color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:15px; font-weight:600;">Próximo &#8594;</button>
+              </div>
 
             </form>
           </div><!-- Content row end -->
@@ -556,6 +522,50 @@
 
 
 
+
+  <script>
+    var currentFormStep = 1;
+    var totalFormSteps = 3;
+    var stepLabels = ['Contato e Tipo de Serviço', 'Detalhes do Projeto', 'Logística'];
+
+    function formStepNav(direction) {
+      if (direction === 1) {
+        // Validate all required fields in the current step before advancing
+        var fields = document.querySelectorAll('.form-step[data-step="' + currentFormStep + '"] [required]');
+        for (var i = 0; i < fields.length; i++) {
+          if (!fields[i].checkValidity()) {
+            fields[i].reportValidity();
+            return;
+          }
+        }
+      }
+
+      // Hide current step
+      document.querySelector('.form-step[data-step="' + currentFormStep + '"]').style.display = 'none';
+
+      currentFormStep += direction;
+
+      // Show new step
+      document.querySelector('.form-step[data-step="' + currentFormStep + '"]').style.display = 'block';
+
+      // Update progress bar width and label
+      var pct = Math.round((currentFormStep / totalFormSteps) * 100);
+      document.getElementById('progress-bar-fill').style.width = pct + '%';
+      document.getElementById('step-indicator').textContent =
+        'Etapa ' + currentFormStep + ' de ' + totalFormSteps + ': ' + stepLabels[currentFormStep - 1];
+
+      // Show Anterior only when past step 1; hide Próximo on the last step
+      document.getElementById('btn-prev').style.display = currentFormStep > 1 ? 'inline-block' : 'none';
+      document.getElementById('btn-next').style.display = currentFormStep < totalFormSteps ? 'inline-block' : 'none';
+
+      // Scroll back to the top of the form so the user sees the new step from the start
+      document.getElementById('fs-frm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+
+  <a href="https://wa.me/5571991202969" id="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   </div><!-- Body inner end -->
   </body>
