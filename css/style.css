@@ -3493,6 +3493,42 @@ label {
   margin-right: 3%;
 }
 
+/* WhatsApp sticky button — shown only on mobile (below 768px) */
+#whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+#whatsapp-float:hover,
+#whatsapp-float:focus {
+  background: #1da851;
+  color: #fff;
+  text-decoration: none;
+}
+
+#whatsapp-float i {
+  font-size: 28px;
+}
+
+@media (min-width: 768px) {
+  #whatsapp-float {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
 
 
