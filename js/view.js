@@ -21,7 +21,7 @@ var ProjectView = {
     item.innerHTML =
       '<div class="project-img-container">' +
         '<a class="gallery-popup" href="' + imgUrl + '" aria-label="' + title + '">' +
-          '<img class="img-fluid" src="' + imgUrl + '" alt="' + title + '">' +
+          '<img class="img-fluid" src="' + imgUrl + '" alt="' + title + '" loading="lazy">' +
           '<span class="gallery-icon"><i class="fa fa-plus"></i></span>' +
         '</a>' +
         '<div class="project-item-info">' +
@@ -47,7 +47,7 @@ var ProjectView = {
     block.innerHTML =
       '<div class="single-project-img-container">' +
         '<a class="gallery-popup" href="' + imgUrl + '">' +
-          '<img class="img-fluid" src="' + imgUrl + '" alt="' + title + '">' +
+          '<img class="img-fluid" src="' + imgUrl + '" alt="' + title + '" loading="lazy">' +
           '<span class="gallery-icon"><i class="fa fa-plus"></i></span>' +
         '</a>' +
       '</div><br>';
