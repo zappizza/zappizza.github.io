@@ -6,7 +6,7 @@ var CloudinaryModel = (function () {
 
   // Builds the full CDN URL for a single image resource returned by the list API
   function buildImageUrl(image) {
-    return BASE + '/image/upload/v' + image.version + '/' + encodeURIComponent(image.public_id) + '.' + image.format;
+    return BASE + '/image/upload/q_auto,f_auto,w_1400,c_limit/v' + image.version + '/' + encodeURIComponent(image.public_id) + '.' + image.format;
   }
 
   // Fetches the homepage image list (tagged "inicio" in Cloudinary)
