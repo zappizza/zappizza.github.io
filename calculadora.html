@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KLZXM2DV');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3KXNFB78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X3KXNFB78N');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="robots" content="index,follow">
+  <link rel="alternate" hreflang="pt-BR" href="https://formaereformas.com/calculadora">
+  <link rel="canonical" href="https://formaereformas.com/calculadora">
+  <meta name="description" content="Calcule o custo estimado da sua reforma em Salvador, BA. Selecione o cômodo, tamanho e tipo de serviço e receba uma estimativa de preço em segundos — gratuito e sem compromisso.">
+  <meta name=author content="Forma e Reformas Salvador Bahia">
+  <meta content="https://formaereformas.com/calculadora" property="og:url">
+  <meta content="Calculadora de Reforma — Forma e Reformas" property="og:title">
+  <meta content="Calcule o custo estimado da sua reforma em Salvador, BA. Selecione o cômodo, tamanho e tipo de serviço e receba uma estimativa de preço em segundos." property="og:description">
+  <meta content="website" property="og:type">
+  <meta content="Forma e Reformas Construções" property="og:site_name">
+  <meta content="pt_BR" property="og:locale">
+  <meta content="Brazil" name="geo.placename">
+
+  <title>Calculadora de Reforma — Quanto Custa Reformar em Salvador | Forma e Reformas</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link href="https://www.formaereformas.com/images/favicon.png" rel="icon" type="image/png">
+
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .calc-option-card {
+      cursor: pointer;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 22px 10px 16px;
+      text-align: center;
+      transition: all 0.2s;
+      background: #fff;
+      height: 100%;
+    }
+    .calc-option-card:hover {
+      border-color: #1abc9c;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(26,188,156,.18);
+    }
+    .calc-option-card.selected {
+      border-color: #1abc9c;
+      background: #e8faf6;
+    }
+    .calc-option-card i {
+      font-size: 2rem;
+      color: #1abc9c;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .calc-option-card .card-label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+      display: block;
+    }
+    .calc-option-card .card-sublabel {
+      font-size: 11px;
+      color: #888;
+      display: block;
+      margin-top: 3px;
+    }
+    .calc-step { display: none; }
+    .calc-step.active { display: block; }
+    .calc-step-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 24px;
+    }
+    .calc-step-num {
+      display: inline-block;
+      background: #1abc9c;
+      color: #fff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    .calc-result-box {
+      background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    .calc-result-box .result-label {
+      font-size: 0.9rem;
+      opacity: .85;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .calc-result-box .result-range {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .calc-result-box .result-disclaimer {
+      font-size: 12px;
+      opacity: .75;
+      line-height: 1.6;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .calc-summary-chip {
+      display: inline-block;
+      background: rgba(255,255,255,.2);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 13px;
+      margin: 4px;
+    }
+    .progress-calc {
+      height: 6px;
+      border-radius: 3px;
+      background: #e0e0e0;
+      margin-bottom: 12px;
+    }
+    .progress-calc-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: #1abc9c;
+      transition: width 0.4s ease;
+    }
+    .calc-card-col { margin-bottom: 16px; }
+    .calc-nav-btn { margin-top: 28px; }
+  </style>
+
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLZXM2DV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="body-inner">
+    <div id="top-bar" class="top-bar"></div>
+
+<header id="header" class="header-one">
+  <div class="bg-white">
+    <div class="container">
+      <div class="logo-area">
+        <div class="row align-items-center">
+          <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
+            <a class="d-block" href="index.html">
+              <img loading="lazy" src="images/logo-pequeno.png" alt="Logo Forma e Reformas Construções">
+            </a>
+          </div>
+          <div class="col-lg-9 header-right">
+            <ul class="top-info-box">
+              <li>
+                <div class="info-box">
+                  <div class="info-box-content">
+                    <a href="https://wa.me/5571991202969" target="_blank">
+                      <img class="whatsapp-logo" loading="lazy" src="images/icon-image/whatsapp-logo.png" alt="Contato via WhatsApp">
+                    </a>
+                    <a href="tel:+5571991202969">
+                      <p class="info-box-subtitle">(+55) 71 99120-2969</p>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="info-box">
+                  <div class="info-box-content">
+                    <p class="info-box-title">Email</p>
+                    <p class="info-box-subtitle-mails">nilson.formaereforma@gmail.com</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-dark p-0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav mr-auto">
+                <li id="inicio-nav" onclick="collapseNavbar('inicio-nav')" class="nav-item dropdown">
+                  <a href="index.html" class="nav-link dropdown-toggle">Início</a>
+                </li>
+                <li id="contatos-nav" onclick="collapseNavbar('contatos-nav')" class="nav-item dropdown">
+                  <a href="index.html#contacts" class="nav-link">Contatos</a>
+                </li>
+                <li id="project-nav" onclick="collapseNavbar('project-nav')" class="nav-item dropdown">
+                  <a href="projeto.html" class="nav-link dropdown-toggle">Projetos</a>
+                </li>
+                <li id="servicos-nav" onclick="collapseNavbar('servicos-nav')" class="nav-item dropdown">
+                  <a href="index.html#about" class="nav-link dropdown-toggle">Serviços</a>
+                </li>
+                <li id="calculadora-nav" onclick="collapseNavbar('calculadora-nav')" class="nav-item dropdown active">
+                  <a href="calculadora.html" class="nav-link">Calculadora</a>
+                </li>
+                <li id="orcamento-nav" onclick="collapseNavbar('orcamento-nav')" class="nav-item dropdown">
+                  <a href="orcamento.html" class="nav-link dropdown-toggle">Orçamento</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner2.jpg)">
+      <div class="banner-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="banner-heading">
+                <h1 class="banner-title">Calculadora de Reforma</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="calc-section" class="ts-service-area pb-0" style="padding-top:56px;">
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mb-4">
+            <h2 class="section-title">Quanto vai custar sua reforma?</h2>
+            <p class="text-muted">Responda 3 perguntas rápidas e veja uma estimativa baseada em médias de mercado em Salvador, BA.</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+
+            <div class="progress-calc">
+              <div class="progress-calc-fill" id="calc-progress-fill" style="width:33%"></div>
+            </div>
+            <div id="calc-step-indicator" style="font-size:13px; color:#888; margin-bottom:28px;">Etapa 1 de 3 — O que reformar?</div>
+
+            <!-- Step 1: Room type -->
+            <div class="calc-step active" id="calc-step-1">
+              <p class="calc-step-title"><span class="calc-step-num">1</span>O que você quer reformar?</p>
+              <div class="row">
+                <div class="col-6 col-md-4 calc-card-col">
+                  <div class="calc-option-card" onclick="calcSelect(1,'banheiro',this)">
+                    <i class="fas fa-bath"></i>
+                    <span class="card-label">Banheiro</span>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 calc-card-col">
+                  <div class="calc-option-card" onclick="calcSelect(1,'cozinha',this)">
+                    <i class="fas fa-utensils"></i>
+                    <span class="card-label">Cozinha</span>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 calc-card-col">
+                  <div class="calc-option-card" onclick="calcSelect(1,'quarto',this)">
+                    <i class="fas fa-bed"></i>
+                    <span class="card-label">Quarto</span>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 calc-card-col">
+                  <div class="calc-option-card" onclick="calcSelect(1,'sala',this)">
+                    <i class="fas fa-couch"></i>
+                    <span class="card-label">Sala / Varanda</span>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 calc-card-col">
+                  <div class="calc-option-card" onclick="calcSelect(1,'area_externa',this)">
+                    <i class="fas fa-tree"></i>
+                    <span class="card-label">Área Externa</span>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 calc-card-col">
+                  <div class="calc-option-card" onclick="calcSelect(1,'casa_completa',this)">
+                    <i class="fas fa-home"></i>
+                    <span class="card-label">Casa / Apto Completo</span>
+                  </div>
+                </div>
+              </div>
+              <div class="calc-nav-btn text-right">
+                <button class="btn btn-primary" onclick="calcNextStep(2)">Próximo <i class="fas fa-arrow-right ml-1"></i></button>
+              </div>
+            </div>
+
+            <!-- Step 2: Size -->
+            <div class="calc-step" id="calc-step-2">
+              <p class="calc-step-title"><span class="calc-step-num">2</span>Qual o tamanho aproximado?</p>
+              <div class="row" id="size-options"></div>
+              <div class="calc-nav-btn d-flex justify-content-between">
+                <button class="btn btn-outline-secondary" onclick="calcPrevStep(1)"><i class="fas fa-arrow-left mr-1"></i> Anterior</button>
+                <button class="btn btn-primary" onclick="calcNextStep(3)">Próximo <i class="fas fa-arrow-right ml-1"></i></button>
+              </div>
+            </div>
+
+            <!-- Step 3: Service -->
+            <div class="calc-step" id="calc-step-3">
+              <p class="calc-step-title"><span class="calc-step-num">3</span>Qual o tipo de reforma?</p>
+              <div class="row" id="service-options"></div>
+              <div class="calc-nav-btn d-flex justify-content-between">
+                <button class="btn btn-outline-secondary" onclick="calcPrevStep(2)"><i class="fas fa-arrow-left mr-1"></i> Anterior</button>
+                <button class="btn btn-primary" onclick="calcShowResult()">Ver Estimativa <i class="fas fa-calculator ml-1"></i></button>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div class="calc-step" id="calc-result">
+              <div class="calc-result-box">
+                <div class="result-label">Estimativa de custo</div>
+                <div class="result-range" id="result-range-text">—</div>
+                <div id="result-summary" style="margin-bottom:18px;"></div>
+                <div class="result-disclaimer">
+                  * Estimativa baseada em médias de mercado em Salvador, BA (2025). O valor real pode variar conforme materiais escolhidos, condição do imóvel e acesso ao local. Solicite um orçamento gratuito para maior precisão.
+                </div>
+              </div>
+
+              <div class="text-center mt-4">
+                <a href="orcamento.html" class="btn btn-primary btn-lg">
+                  <i class="fas fa-file-alt mr-2"></i>Solicitar Orçamento Gratuito
+                </a>
+                <br class="d-md-none">
+                <button onclick="calcReset()" class="btn btn-outline-secondary btn-lg mt-2 mt-md-0 ml-md-3">
+                  <i class="fas fa-redo mr-2"></i>Recalcular
+                </button>
+              </div>
+
+              <div class="row mt-5 pt-3" style="border-top:1px solid #eee;">
+                <div class="col-md-4 text-center mb-4">
+                  <i class="fas fa-shield-alt fa-2x mb-3" style="color:#1abc9c;"></i>
+                  <h5>Orçamento gratuito</h5>
+                  <p class="text-muted small">Solicite sem compromisso. Retorno em até 24 horas.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                  <i class="fas fa-award fa-2x mb-3" style="color:#1abc9c;"></i>
+                  <h5>+10 anos de experiência</h5>
+                  <p class="text-muted small">Especialistas em obras residenciais e comerciais em Salvador.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                  <i class="fas fa-map-marker-alt fa-2x mb-3" style="color:#1abc9c;"></i>
+                  <h5>Salvador e Região Metropolitana</h5>
+                  <p class="text-muted small">Atendemos toda a grande Salvador, Bahia.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="ts-service-area" style="padding-top:48px;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mb-4">
+            <h3 class="section-title">Mais recursos úteis</h3>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <div class="ts-service-box text-center">
+              <div class="ts-service-box-img">
+                <i class="fas fa-tags fa-3x" style="color:#1abc9c;"></i>
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="quanto-custa-reformar.html">Tabela de Preços</a></h3>
+                <p>Consulte os valores de referência para os principais tipos de reforma em Salvador.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="ts-service-box text-center">
+              <div class="ts-service-box-img">
+                <i class="fas fa-lightbulb fa-3x" style="color:#1abc9c;"></i>
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="dicas.html">Dicas de Reforma</a></h3>
+                <p>Guia prático para planejar sua obra, escolher materiais e evitar surpresas no custo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="ts-service-box text-center">
+              <div class="ts-service-box-img">
+                <i class="fas fa-question-circle fa-3x" style="color:#1abc9c;"></i>
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="faq.html">Perguntas Frequentes</a></h3>
+                <p>Saiba prazos, garantias e como funciona nosso processo de obra.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe no-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="subscribe-call-to-acton">
+              <h3>Podemos Ajudar?</h3>
+              <h4><a href="tel:+5571991202969" style="color:inherit;">(+55) 71 99120-2969</a></h4>
+              <p style="color:#fff; font-size:14px; margin-top:6px;"><i class="fas fa-clock"></i> Seg–Sex: 8h às 18h</p>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="ts-newsletter row align-items-center">
+              <div class="col-md-6 newsletter-introtext">
+                <h4 class="text-white mb-0">Envie um e-mail e responderemos o mais breve possível</h4>
+              </div>
+              <div class="col-md-5">
+                <a href="mailto:nilson.formaereforma@gmail.com"><p class="text-white">nilson.formaereforma@gmail.com</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer bg-overlay">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-4 col-md-6 footer-widget footer-about">
+              <h3 class="widget-title">Sobre Nós</h3>
+              <img loading="lazy" width="200" class="footer-logo" src="images/footer-logo-pequeno.png" alt="Forma e Reformas">
+              <p>Formas e Reformas Construção é uma empresa de serviços em geral na area de construção civil. Atuamos em Salvador e região metropolitana.</p>
+              <div class="footer-social">
+                <ul>
+                  <li><a href="https://www.facebook.com/forma.reforma.7" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="https://www.instagram.com/formaereforma__/" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+              <h3 class="widget-title">Horários de Funcionamento</h3>
+              <div class="working-hours">
+                Trabalhamos 5 dias por semana, de Segunda a Sexta, exceto feriados. Entre em contato se tiver uma emergência, através do nosso <br>WhatsApp e Email.
+                <br><br> Segunda - Sexta: <span class="text-right">8:00 - 18:00</span>
+                <br> Sabado: <span class="text-right">Fechado</span>
+                <br> Domingos e Feriados: <span class="text-right">Fechado</span>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-lg-0">
+              <h3 class="widget-title">Links Úteis</h3>
+              <ul class="list-unstyled" style="line-height:2.2;">
+                <li><a href="projeto.html" style="color:#aaa;">Projetos</a></li>
+                <li><a href="calculadora.html" style="color:#aaa;">Calculadora de Reforma</a></li>
+                <li><a href="quanto-custa-reformar.html" style="color:#aaa;">Tabela de Preços</a></li>
+                <li><a href="dicas.html" style="color:#aaa;">Dicas de Reforma</a></li>
+                <li><a href="faq.html" style="color:#aaa;">Perguntas Frequentes</a></li>
+                <li><a href="orcamento.html" style="color:#aaa;">Solicitar Orçamento</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Javascript Files -->
+  <script src="plugins/jQuery/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/slick/slick-animation.min.js"></script>
+
+  <script>
+    var calcState = { room: null, size: null, service: null };
+
+    var roomConfig = {
+      banheiro:      { label: 'Banheiro',            sizes: ['até 5 m²', '5–10 m²', 'acima de 10 m²'] },
+      cozinha:       { label: 'Cozinha',              sizes: ['até 8 m²', '8–15 m²', 'acima de 15 m²'] },
+      quarto:        { label: 'Quarto',               sizes: ['até 10 m²', '10–20 m²', 'acima de 20 m²'] },
+      sala:          { label: 'Sala / Varanda',       sizes: ['até 12 m²', '12–25 m²', 'acima de 25 m²'] },
+      area_externa:  { label: 'Área Externa',         sizes: ['até 20 m²', '20–50 m²', 'acima de 50 m²'] },
+      casa_completa: { label: 'Casa / Apto Completo', sizes: ['até 80 m²', '80–150 m²', 'acima de 150 m²'] }
+    };
+
+    var serviceConfig = {
+      banheiro:      [['pintura','Pintura','fa-paint-roller'],['piso','Piso e Azulejo','fa-border-all'],['hidraulica','Hidráulica','fa-faucet'],['eletrica','Elétrica','fa-bolt'],['completa','Reforma Completa','fa-tools']],
+      cozinha:       [['pintura','Pintura','fa-paint-roller'],['piso','Piso e Azulejo','fa-border-all'],['hidraulica','Hidráulica','fa-faucet'],['eletrica','Elétrica','fa-bolt'],['completa','Reforma Completa','fa-tools']],
+      quarto:        [['pintura','Pintura','fa-paint-roller'],['piso','Piso','fa-border-all'],['eletrica','Elétrica','fa-bolt'],['completa','Reforma Completa','fa-tools']],
+      sala:          [['pintura','Pintura','fa-paint-roller'],['piso','Piso','fa-border-all'],['eletrica','Elétrica','fa-bolt'],['completa','Reforma Completa','fa-tools']],
+      area_externa:  [['pintura','Pintura','fa-paint-roller'],['piso','Piso / Calçada','fa-border-all'],['completa','Reforma Completa','fa-tools']],
+      casa_completa: [['completa','Reforma Completa','fa-tools']]
+    };
+
+    var priceTable = {
+      banheiro: {
+        small:  { pintura:[700,1800],   piso:[2500,6000],  hidraulica:[1800,4500],  eletrica:[500,1300],  completa:[7000,16000]  },
+        medium: { pintura:[1200,3000],  piso:[4500,10000], hidraulica:[3000,7000],  eletrica:[900,2200],  completa:[12000,26000] },
+        large:  { pintura:[2000,5000],  piso:[7000,16000], hidraulica:[5000,11000], eletrica:[1400,3500], completa:[20000,42000] }
+      },
+      cozinha: {
+        small:  { pintura:[900,2200],   piso:[3000,7000],  hidraulica:[2200,5500],  eletrica:[700,1800],  completa:[9000,20000]  },
+        medium: { pintura:[1800,4500],  piso:[5500,12000], hidraulica:[4000,9000],  eletrica:[1300,3200], completa:[16000,36000] },
+        large:  { pintura:[3000,7500],  piso:[9000,20000], hidraulica:[6500,14000], eletrica:[2200,5200], completa:[28000,60000] }
+      },
+      quarto: {
+        small:  { pintura:[600,1500],  piso:[2000,5000],  eletrica:[450,1100],  completa:[5000,13000]  },
+        medium: { pintura:[1000,2500], piso:[3500,8000],  eletrica:[750,1900],  completa:[8500,20000]  },
+        large:  { pintura:[1700,4200], piso:[6000,13000], eletrica:[1200,3000], completa:[14000,34000] }
+      },
+      sala: {
+        small:  { pintura:[700,1800],  piso:[2500,5500],  eletrica:[500,1200],  completa:[6500,15000]  },
+        medium: { pintura:[1300,3200], piso:[4500,10000], eletrica:[900,2200],  completa:[11000,26000] },
+        large:  { pintura:[2200,5500], piso:[7500,16000], eletrica:[1500,3500], completa:[18000,42000] }
+      },
+      area_externa: {
+        small:  { pintura:[900,2200],  piso:[2800,6500],  completa:[7500,17000]  },
+        medium: { pintura:[1800,4500], piso:[5000,11000], completa:[13000,28000] },
+        large:  { pintura:[3000,7500], piso:[8000,17000], completa:[20000,46000] }
+      },
+      casa_completa: {
+        small:  { completa:[32000,65000]   },
+        medium: { completa:[58000,115000]  },
+        large:  { completa:[95000,190000]  }
+      }
+    };
+
+    function calcSelect(step, value, el) {
+      el.closest('.row').querySelectorAll('.calc-option-card').forEach(function(c){ c.classList.remove('selected'); });
+      el.classList.add('selected');
+      if (step === 1) calcState.room = value;
+      if (step === 2) calcState.size = value;
+      if (step === 3) calcState.service = value;
+    }
+
+    function calcNextStep(nextStep) {
+      var prev = nextStep - 1;
+      if (prev === 1 && !calcState.room)  { alert('Por favor selecione um cômodo.');    return; }
+      if (prev === 2 && !calcState.size)  { alert('Por favor selecione um tamanho.');   return; }
+      if (nextStep === 2) buildSizeOptions();
+      if (nextStep === 3) buildServiceOptions();
+      showCalcStep('calc-step-' + nextStep);
+      updateCalcProgress(nextStep);
+    }
+
+    function calcPrevStep(prevStep) {
+      if (prevStep === 1) calcState.size = null;
+      if (prevStep === 2) calcState.service = null;
+      showCalcStep('calc-step-' + prevStep);
+      updateCalcProgress(prevStep);
+    }
+
+    function showCalcStep(id) {
+      document.querySelectorAll('.calc-step').forEach(function(s){ s.classList.remove('active'); });
+      document.getElementById(id).classList.add('active');
+      document.getElementById('calc-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function updateCalcProgress(step) {
+      var pct = Math.round((step / 3) * 100);
+      document.getElementById('calc-progress-fill').style.width = pct + '%';
+      var labels = {
+        1: 'Etapa 1 de 3 — O que reformar?',
+        2: 'Etapa 2 de 3 — Tamanho',
+        3: 'Etapa 3 de 3 — Tipo de serviço'
+      };
+      document.getElementById('calc-step-indicator').textContent = labels[step] || '';
+    }
+
+    function buildSizeOptions() {
+      var cfg = roomConfig[calcState.room];
+      var keys = ['small','medium','large'];
+      var icons = ['fa-compress-arrows-alt','fa-arrows-alt','fa-expand-arrows-alt'];
+      var names = ['Pequeno','Médio','Grande'];
+      var html = '';
+      cfg.sizes.forEach(function(lbl, i) {
+        html += '<div class="col-4 calc-card-col">' +
+          '<div class="calc-option-card" onclick="calcSelect(2,\'' + keys[i] + '\',this)">' +
+          '<i class="fas ' + icons[i] + '"></i>' +
+          '<span class="card-label">' + names[i] + '</span>' +
+          '<span class="card-sublabel">' + lbl + '</span>' +
+          '</div></div>';
+      });
+      document.getElementById('size-options').innerHTML = html;
+    }
+
+    function buildServiceOptions() {
+      var services = serviceConfig[calcState.room];
+      var cols = services.length <= 3 ? 'col-4' : 'col-6 col-md-4';
+      var html = '';
+      services.forEach(function(s) {
+        html += '<div class="' + cols + ' calc-card-col">' +
+          '<div class="calc-option-card" onclick="calcSelect(3,\'' + s[0] + '\',this)">' +
+          '<i class="fas ' + s[2] + '"></i>' +
+          '<span class="card-label">' + s[1] + '</span>' +
+          '</div></div>';
+      });
+      document.getElementById('service-options').innerHTML = html;
+    }
+
+    function formatBRL(val) {
+      return 'R$ ' + val.toLocaleString('pt-BR');
+    }
+
+    function calcShowResult() {
+      if (!calcState.service) { alert('Por favor selecione o tipo de reforma.'); return; }
+      var range = priceTable[calcState.room][calcState.size][calcState.service];
+      document.getElementById('result-range-text').textContent = range
+        ? formatBRL(range[0]) + ' a ' + formatBRL(range[1])
+        : 'Consulte-nos para uma estimativa';
+      var sizeIdx = ['small','medium','large'].indexOf(calcState.size);
+      var sizeLabel = roomConfig[calcState.room].sizes[sizeIdx];
+      var svcLabel = serviceConfig[calcState.room].find(function(s){ return s[0] === calcState.service; })[1];
+      document.getElementById('result-summary').innerHTML =
+        '<span class="calc-summary-chip"><i class="fas fa-home mr-1"></i>' + roomConfig[calcState.room].label + '</span>' +
+        '<span class="calc-summary-chip"><i class="fas fa-ruler-combined mr-1"></i>' + sizeLabel + '</span>' +
+        '<span class="calc-summary-chip"><i class="fas fa-tools mr-1"></i>' + svcLabel + '</span>';
+      showCalcStep('calc-result');
+      document.getElementById('calc-progress-fill').style.width = '100%';
+      document.getElementById('calc-step-indicator').textContent = 'Estimativa pronta!';
+    }
+
+    function calcReset() {
+      calcState = { room: null, size: null, service: null };
+      showCalcStep('calc-step-1');
+      updateCalcProgress(1);
+    }
+  </script>
+
+  <a href="https://wa.me/5571991202969" id="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  </div><!-- Body inner end -->
+  </body>
+</html>
