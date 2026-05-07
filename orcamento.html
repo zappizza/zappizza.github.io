@@ -90,6 +90,15 @@
   <!-- Template styles-->
   <link rel="stylesheet" href="css/style.css">
 
+  <style>
+    label.required::after { content: " *"; color: #e74c3c; font-weight: bold; }
+    .field-invalid { border-color: #e74c3c !important; box-shadow: 0 0 0 0.2rem rgba(231,76,60,.25) !important; }
+    .field-error-msg { display: block; color: #e74c3c; font-size: 13px; margin-top: 4px; margin-bottom: 8px; }
+    .trt-tooltip { position: relative; color: #1abc9c; cursor: help; font-size: 16px; margin-left: 4px; vertical-align: middle; }
+    .trt-tooltip::after { content: attr(data-tooltip); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 8px 12px; border-radius: 4px; font-size: 13px; font-weight: normal; width: 280px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 1000; line-height: 1.4; }
+    .trt-tooltip:hover::after { opacity: 1; }
+  </style>
+
 </head>
 <body>
 
@@ -111,7 +120,7 @@
         <div class="row align-items-center">
           <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
             <a class="d-block" href="index.html">
-              <img loading="lazy" src="images/logo-pequeno.png" alt="formaereformas">
+              <img loading="lazy" src="images/logo-pequeno.png" alt="Logo Forma e Reformas Construções">
             </a>
           </div><!-- logo end -->
 
@@ -121,7 +130,9 @@
                 <div class="info-box">
                   <div class="info-box-content">
                     <a href="https://wa.me/5571991202969" target="_blank">
-                      <img class="whatsapp-logo" loading="lazy" src="images/icon-image/whatsapp-logo.png" alt="whatsapp-icon">
+                      <img class="whatsapp-logo" loading="lazy" src="images/icon-image/whatsapp-logo.png" alt="Contato via WhatsApp">
+                    </a>
+                    <a href="tel:+5571991202969">
                       <p class="info-box-subtitle">(+55) 71 99120-2969</p>
                     </a>
                   </div>
@@ -209,7 +220,7 @@
                 <h3 class="service-box-title">Faça seu orçamento online e entraremos em contato em até 24 horas</h3>
                 <h3 class="service-box-title">Você tambem pode entrar em contato atravez do nosso WhatsApp
                     <a href="https://wa.me/5571991202969" target="_blank">
-                        <img loading="lazy" src="images/whatsapp-icone.png" alt="whatsapp icon" width="25" height="25">
+                        <img loading="lazy" src="images/whatsapp-icone.png" alt="Contato via WhatsApp" width="25" height="25">
                         (+55) 71 99120-2969
                     </a>
                 </h3>
@@ -222,7 +233,7 @@
             <!-- Progress bar -->
             <div id="form-progress" style="width:100%; padding: 0 15px 24px 15px;">
               <div id="step-indicator" style="font-weight:600; font-size:15px; margin-bottom:8px; color:#444;">
-                Etapa 1 de 3: Contato e Tipo de Serviço
+                Etapa 1 de 3: Tipo de Serviço e Urgência
               </div>
               <div style="background:#e0e0e0; border-radius:4px; height:8px;">
                 <div id="progress-bar-fill" style="background:#ffb600; height:8px; border-radius:4px; width:33%; transition:width 0.3s ease;"></div>
@@ -232,43 +243,48 @@
             <form id="fs-frm" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/mjvnedda" method="post" enctype="multipart/form-data">
               <input type="hidden" name="Email enviado através do site www.formaereformas.com" id="formaereformas">
 
-              <!-- STEP 1: Contato e Tipo de Serviço -->
+              <!-- STEP 1: Tipo de Serviço e Urgência -->
               <fieldset class="form-step" data-step="1" style="border:none; padding:0; margin:0;">
-                <label for="full-name">Nome</label>
-                <input type="text" name="Nome" id="name" placeholder="Nome" required="">
-                <label for="email-address">Email</label>
-                <input type="email" name="responder para" id="email-address" placeholder="meu-email@domain.tld" required="">
-                <label for="street-address">Endereço</label>
-                <input type="text" name="Endereço" id="street-address" placeholder="Rua" required="">
-                <input type="text" name="Complemento" id="unit" placeholder="Complemento do endereço">
-                <input type="text" name="Cidade" placeholder="Cidade" required="">
-                <select name="Estado" required="">
-                  <option value="" selected="" disabled="">Estado</option>
-                  <option value="BA">Bahia</option>
-                </select>
-                <input type="text" name="Código Postal" placeholder="CEP" required="">
-                <label for="cliente-type">Tipo do cliente</label>
-                <select name="Tipo do cliente" id="cliente-type" required="">
-                  <option value="" selected="" disabled="">Favor selecionar</option>
-                  <option value="Pessoa física (CPF)">Pessoa física (CPF)</option>
-                  <option value="Pessoa jurídica (CNPJ)">Pessoa jurídica (CNPJ)</option>
-                </select>
-                <label for="immobile-type">Tipo de imóvel</label>
-                <select name="Tipo do imóvel" id="immobile-type" required="">
-                  <option value="" selected="" disabled="">Favor selecionar</option>
-                  <option value="Apartamento">Apartamento</option>
-                  <option value="Residência">Residência</option>
-                  <option value="Comercial">Comercial</option>
-                </select>
-                <label for="service-goal">Finalidade do serviço</label>
-                <select name="Finalidade do serviço" id="service-goal" required="">
-                  <option value="" selected="" disabled="">Favor selecionar</option>
+                <label class="required" for="service-goal">Finalidade do serviço</label>
+                <select name="Finalidade do serviço" id="service-goal" required>
+                  <option value="" selected disabled>Favor selecionar</option>
                   <option value="Construção">Construção</option>
                   <option value="Projeto">Projeto</option>
                   <option value="Reforma geral">Reforma geral</option>
                   <option value="Reforma de 2 ou mais cômodos">Reforma de 2 ou mais cômodos</option>
                   <option value="Reforma de 1 cômodo">Reforma de 1 cômodo</option>
                 </select>
+                <label class="required" for="immobile-type">Tipo de imóvel</label>
+                <select name="Tipo do imóvel" id="immobile-type" required>
+                  <option value="" selected disabled>Favor selecionar</option>
+                  <option value="Apartamento">Apartamento</option>
+                  <option value="Residência">Residência</option>
+                  <option value="Comercial">Comercial</option>
+                </select>
+                <label class="required" for="cliente-type">Tipo do cliente</label>
+                <select name="Tipo do cliente" id="cliente-type" required>
+                  <option value="" selected disabled>Favor selecionar</option>
+                  <option value="Pessoa física (CPF)">Pessoa física (CPF)</option>
+                  <option value="Pessoa jurídica (CNPJ)">Pessoa jurídica (CNPJ)</option>
+                </select>
+                <label class="required">Quando pretende começar o serviço?</label>
+                <div id="start-time">
+                  <label style="height:25px; width:300px;" for="start-soon">
+                    <input style="height:15px; width:25px;" type="radio" id="start-soon" name="Quando pretende começar o serviço" value="O mais breve possível"> O mais breve possível
+                  </label>
+                  <label style="height:25px; width:300px;" for="start-in-a-month">
+                    <input style="height:15px; width:25px;" type="radio" id="start-in-a-month" name="Quando pretende começar o serviço" value="Daqui a 1 mês"> Daqui a 1 mês
+                  </label>
+                  <label style="height:25px; width:300px;" for="start-in-two-to-three-months">
+                    <input style="height:15px; width:25px;" type="radio" id="start-in-two-to-three-months" name="Quando pretende começar o serviço" value="De 2 a 3 meses"> De 2 a 3 meses
+                  </label>
+                  <label style="height:25px; width:300px;" for="start-after-three-months">
+                    <input style="height:15px; width:25px;" type="radio" id="start-after-three-months" name="Quando pretende começar o serviço" value="Mais de 3 meses"> Mais de 3 meses
+                  </label>
+                  <label style="height:25px; width:300px;" for="no-start-date">
+                    <input style="height:15px; width:25px;" type="radio" id="no-start-date" name="Quando pretende começar o serviço" value="Não tenho pretensão de início ainda"> Não tenho pretensão de início ainda
+                  </label>
+                </div>
               </fieldset>
 
               <!-- STEP 2: Detalhes do Projeto -->
@@ -328,9 +344,27 @@
                 </div>
               </fieldset>
 
-              <!-- STEP 3: Logística -->
+              <!-- STEP 3: Seus Dados e Logística -->
               <fieldset class="form-step" data-step="3" style="display:none; border:none; padding:0; margin:0;">
-                <label>Deseja emissão de TRT?</label>
+                <h5>Seus Dados</h5>
+                <label class="required" for="full-name">Nome</label>
+                <input type="text" name="Nome" id="name" placeholder="Seu nome completo" required>
+                <label class="required" for="email-address">Email</label>
+                <input type="email" name="responder para" id="email-address" placeholder="meu-email@domain.tld" required>
+                <label class="required" for="street-address">Endereço do imóvel</label>
+                <input type="text" name="Endereço" id="street-address" placeholder="Rua" required>
+                <input type="text" name="Complemento" id="unit" placeholder="Complemento do endereço">
+                <input type="text" name="Cidade" placeholder="Cidade" required>
+                <select name="Estado" required>
+                  <option value="" selected disabled>Estado</option>
+                  <option value="BA">Bahia</option>
+                </select>
+                <input type="text" name="Código Postal" placeholder="CEP" required>
+
+                <h5 style="margin-top:24px;">Logística</h5>
+                <label>Deseja emissão de TRT?
+                  <span class="trt-tooltip" data-tooltip="TRT (Termo de Responsabilidade Técnica) é um documento que atesta a responsabilidade técnica pela execução da obra, exigido pela prefeitura para obras que requerem alvará de construção.">&#9432;</span>
+                </label>
                 <div id="trt-emission">
                   <label style="height:25px; width:300px;" for="emission-yes">
                     <input style="height:15px; width:25px;" type="radio" id="emission-yes" name="Emissão TRT" value="Sim"> Sim
@@ -423,24 +457,6 @@
                     <input style="height:15px; width:25px;" type="radio" id="on-card-no" name="Deseja parcelar a realização do serviço no cartão de crédito" value="Não"> Não
                   </label>
                 </div>
-                <label>Quando pretende começar o serviço?</label>
-                <div id="start-time">
-                  <label style="height:25px; width:300px;" for="start-soon">
-                    <input style="height:15px; width:25px;" type="radio" id="start-soon" name="Quando pretende começar o serviço" value="O mais breve possível"> O mais breve possível
-                  </label>
-                  <label style="height:25px; width:300px;" for="start-in-a-month">
-                    <input style="height:15px; width:25px;" type="radio" id="start-in-a-month" name="Quando pretende começar o serviço" value="Daqui a 1 mês"> Daqui a 1 mês
-                  </label>
-                  <label style="height:25px; width:300px;" for="start-in-two-to-three-months">
-                    <input style="height:15px; width:25px;" type="radio" id="start-in-two-to-three-months" name="Quando pretende começar o serviço" value="De 2 a 3 meses"> De 2 a 3 meses
-                  </label>
-                  <label style="height:25px; width:300px;" for="start-after-three-months">
-                    <input style="height:15px; width:25px;" type="radio" id="start-after-three-months" name="Quando pretende começar o serviço" value="Mais de 3 meses"> Mais de 3 meses
-                  </label>
-                  <label style="height:25px; width:300px;" for="no-start-date">
-                    <input style="height:15px; width:25px;" type="radio" id="no-start-date" name="Quando pretende começar o serviço" value="Não tenho pretensão de início ainda"> Não tenho pretensão de início ainda
-                  </label>
-                </div>
                 <label for="Nota">Alguma outra informação?</label>
                 <textarea rows="2" name="nota" id="Nota" placeholder="Informação adicional"></textarea>
                 <input type="hidden" name="_subject" id="email-subject" value="Orçamento">
@@ -530,41 +546,58 @@
   <script>
     var currentFormStep = 1;
     var totalFormSteps = 3;
-    var stepLabels = ['Contato e Tipo de Serviço', 'Detalhes do Projeto', 'Logística'];
+    var stepLabels = ['Tipo de Serviço e Urgência', 'Detalhes do Projeto', 'Seus Dados e Logística'];
 
-    function formStepNav(direction) {
-      if (direction === 1) {
-        // Validate all required fields in the current step before advancing
-        var fields = document.querySelectorAll('.form-step[data-step="' + currentFormStep + '"] [required]');
-        for (var i = 0; i < fields.length; i++) {
-          if (!fields[i].checkValidity()) {
-            fields[i].reportValidity();
-            return;
-          }
+    function clearFieldError(field) {
+      field.classList.remove('field-invalid');
+      var msg = field.parentNode.querySelector('.field-error-msg');
+      if (msg) msg.remove();
+    }
+
+    function showFieldError(field) {
+      field.classList.add('field-invalid');
+      if (!field.parentNode.querySelector('.field-error-msg')) {
+        var msg = document.createElement('span');
+        msg.className = 'field-error-msg';
+        msg.textContent = 'Este campo é obrigatório.';
+        field.parentNode.insertBefore(msg, field.nextSibling);
+      }
+      field.addEventListener('change', function() { clearFieldError(field); }, { once: true });
+      field.addEventListener('input', function() { clearFieldError(field); }, { once: true });
+    }
+
+    function validateStep(step) {
+      var fields = document.querySelectorAll('.form-step[data-step="' + step + '"] [required]');
+      var firstInvalid = null;
+      for (var i = 0; i < fields.length; i++) {
+        clearFieldError(fields[i]);
+        if (!fields[i].checkValidity()) {
+          showFieldError(fields[i]);
+          if (!firstInvalid) firstInvalid = fields[i];
         }
       }
+      if (firstInvalid) { firstInvalid.focus(); return false; }
+      return true;
+    }
 
-      // Hide current step
+    function formStepNav(direction) {
+      if (direction === 1 && !validateStep(currentFormStep)) return;
+
       document.querySelector('.form-step[data-step="' + currentFormStep + '"]').style.display = 'none';
-
       currentFormStep += direction;
-
-      // Show new step
       document.querySelector('.form-step[data-step="' + currentFormStep + '"]').style.display = 'block';
 
-      // Update progress bar width and label
       var pct = Math.round((currentFormStep / totalFormSteps) * 100);
       document.getElementById('progress-bar-fill').style.width = pct + '%';
       document.getElementById('step-indicator').textContent =
         'Etapa ' + currentFormStep + ' de ' + totalFormSteps + ': ' + stepLabels[currentFormStep - 1];
 
-      // Show Anterior only when past step 1; hide Próximo on the last step
       document.getElementById('btn-prev').style.display = currentFormStep > 1 ? 'inline-block' : 'none';
       document.getElementById('btn-next').style.display = currentFormStep < totalFormSteps ? 'inline-block' : 'none';
 
-      // Scroll back to the top of the form so the user sees the new step from the start
       document.getElementById('fs-frm').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
   </script>
 
   <a href="https://wa.me/5571991202969" id="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
