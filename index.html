@@ -92,7 +92,31 @@
   <!-- Template styles-->
   <link rel="stylesheet" href="css/style.css">
 
-
+  <style>
+    /* Always show category label at the bottom of each gallery card */
+    .shuffle-item .project-img-container .project-item-info {
+      top: auto;
+      margin-top: 0;
+      padding: 28px 16px 14px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.78));
+    }
+    .shuffle-item .project-img-container .project-item-info-content {
+      opacity: 1;
+      transform: none;
+    }
+    /* On devices that support hover, keep the slide-up animation as an enhancement */
+    @media (hover: hover) {
+      .shuffle-item .project-img-container .project-item-info-content {
+        opacity: 0.9;
+        transform: perspective(1px) translate3d(0, 6px, 0);
+        transition: all 400ms;
+      }
+      .shuffle-item .project-img-container:hover .project-item-info-content {
+        opacity: 1;
+        transform: perspective(1px) translate3d(0, 0, 0);
+      }
+    }
+  </style>
 
 </head>
 <body>
